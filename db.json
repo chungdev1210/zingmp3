@@ -1,0 +1,73 @@
+{
+  "songs": [
+    {
+      "id": 1,
+      "name": "Ai chung tình được mãi",
+      "source": "",
+      "image": "https://avatar-ex-swe.nixcdn.com/song/2022/12/06/8/b/9/3/1670318086733.jpg",
+      "singer": [
+        {
+          "id": 1,
+          "name": "Đinh Tùng Huy"
+        }
+      ],
+      "listen_count": 0,
+      "follow_count": 0,
+      "duration": "05:30",
+      "create_at": "2022-12-12 09:30:30",
+      "update_at": "2022-12-12 09:30:30"
+    },
+    {
+      "id": 2,
+      "name": "Tình đẹp đến mấy cũng tàn",
+      "source": "",
+      "image": "https://avatar-ex-swe.nixcdn.com/song/2022/12/06/8/b/9/3/1670318086733.jpg",
+      "singer": [
+        {
+          "id": 1,
+          "name": "Như Việt"
+        }
+      ],
+      "listen_count": 0,
+      "follow_count": 0,
+      "duration": "06:30",
+      "create_at": "2022-12-12 09:30:30",
+      "update_at": "2022-12-12 09:30:30"
+    },
+    {
+      "id": 3,
+      "name": "Một bước yêu vạn dặm đau",
+      "source": "",
+      "image": "https://avatar-ex-swe.nixcdn.com/song/2022/12/06/8/b/9/3/1670318086733.jpg",
+      "singer": [
+        {
+          "id": 1,
+          "name": "Mr.Siro"
+        }
+      ],
+      "listen_count": 0,
+      "follow_count": 0,
+      "duration": "04:30",
+      "create_at": "2022-12-12 09:30:30",
+      "update_at": "2022-12-12 09:30:30"
+    }
+  ],
+  "keywords": [
+    {
+      "id": 1,
+      "keyword": "abc"
+    },
+    {
+      "id": 2,
+      "keyword": "abc"
+    }
+  ],
+  "users": [
+    {
+      "email": "chungzmg@gmail.com",
+      "password": "$2a$10$cUMd2SOSW1IIFyDQBwx2z.vvD2BhgJyDiNGXAoGCkuprqIeeCI5ci",
+      "name": "Chung Nguyễn",
+      "id": 1
+    }
+  ]
+}
