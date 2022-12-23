@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import "./Category.scss";
 import useClient from "../../Services/Hooks/useClient";
 import CategoryItem from "./CategoryItem";
+import { Link } from "react-router-dom";
 
 function Categories(props) {
    const client = useClient();
@@ -36,7 +37,7 @@ function Categories(props) {
                   </div>
                   <div className="categories__playlists">
                      {categories?.map((category) => {
-                        return <CategoryItem key={category.id} {...category} />;
+                        return <Link to={`detail${category.id}`}><CategoryItem key={category.id} {...category} /></Link>;
                      })}
                   </div>
                </>
