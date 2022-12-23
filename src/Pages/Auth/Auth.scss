@@ -1,4 +1,5 @@
-.login {
+.login,
+.register {
   color: #fff;
   padding: 20px 40px;
   max-width: 500px;
@@ -8,6 +9,7 @@
     margin-bottom: 15px;
     border-bottom: 1px solid #9b9b9b;
     padding-bottom: 5px;
+    text-align: center;
   }
 
   .form-group {
@@ -24,7 +26,7 @@
       padding: 10px 10px;
       color: #fff;
       &::placeholder {
-        color: #fff;
+        color: #cccc;
       }
     }
   }

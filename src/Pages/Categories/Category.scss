@@ -1,0 +1,60 @@
+.categories {
+    padding: 0 30px;
+    height: 1000px;
+    .categories__banner {
+        img {
+            width: 100%;
+            border-radius: 5px;
+        }
+    }
+    .categories__playlists {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        .playlist__item {
+            margin-top: 30px;
+            position: relative;
+            width: 290px;
+            height: 162px; 
+            img {
+                width: 100%;
+                border-radius: 5px;
+            }
+            .overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgb(0 0 0 / 37%);
+            }
+            // .playlist__item--inner {
+            //     position: relative;
+            //     z-index: 1;
+            // }
+            display: flex;
+            .playlist__item-title {
+                position: absolute;
+                top: 30%;
+                left: 20px;
+                color: #fff;
+                text-transform: uppercase;
+            }
+            .playlist__item-hot {
+                display: flex;
+                position: absolute;
+                margin-left: 20px;
+                top: 55%;
+                .playlist__item-img {
+                    width: 52px;
+                    height: 52px;
+                    margin-right: 12px;
+                    img {
+                        width: 100%;
+                        border-radius: 5px;
+                    }
+                }
+            }
+        }
+    }
+}

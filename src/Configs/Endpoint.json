@@ -3,5 +3,7 @@
     "singer": "/singer",
     "keywords": "/keywords",
     "login": "/login",
-    "users": "/640/users"
+    "users": "/640/users",
+    "register": "/register",
+    "categories": "/categories"
 }

@@ -1,73 +1,391 @@
 {
-  "songs": [
-    {
-      "id": 1,
-      "name": "Ai chung tình được mãi",
-      "source": "",
-      "image": "https://avatar-ex-swe.nixcdn.com/song/2022/12/06/8/b/9/3/1670318086733.jpg",
-      "singer": [
-        {
-          "id": 1,
-          "name": "Đinh Tùng Huy"
-        }
-      ],
-      "listen_count": 0,
-      "follow_count": 0,
-      "duration": "05:30",
-      "create_at": "2022-12-12 09:30:30",
-      "update_at": "2022-12-12 09:30:30"
-    },
-    {
-      "id": 2,
-      "name": "Tình đẹp đến mấy cũng tàn",
-      "source": "",
-      "image": "https://avatar-ex-swe.nixcdn.com/song/2022/12/06/8/b/9/3/1670318086733.jpg",
-      "singer": [
-        {
-          "id": 1,
-          "name": "Như Việt"
-        }
-      ],
-      "listen_count": 0,
-      "follow_count": 0,
-      "duration": "06:30",
-      "create_at": "2022-12-12 09:30:30",
-      "update_at": "2022-12-12 09:30:30"
-    },
-    {
-      "id": 3,
-      "name": "Một bước yêu vạn dặm đau",
-      "source": "",
-      "image": "https://avatar-ex-swe.nixcdn.com/song/2022/12/06/8/b/9/3/1670318086733.jpg",
-      "singer": [
-        {
-          "id": 1,
-          "name": "Mr.Siro"
-        }
-      ],
-      "listen_count": 0,
-      "follow_count": 0,
-      "duration": "04:30",
-      "create_at": "2022-12-12 09:30:30",
-      "update_at": "2022-12-12 09:30:30"
-    }
-  ],
-  "keywords": [
-    {
-      "id": 1,
-      "keyword": "abc"
-    },
-    {
-      "id": 2,
-      "keyword": "abc"
-    }
-  ],
-  "users": [
-    {
-      "email": "chungzmg@gmail.com",
-      "password": "$2a$10$cUMd2SOSW1IIFyDQBwx2z.vvD2BhgJyDiNGXAoGCkuprqIeeCI5ci",
-      "name": "Chung Nguyễn",
-      "id": 1
-    }
-  ]
+   "songs": [
+      {
+         "id": 1,
+         "name": "Ai chung tình được mãi",
+         "source": "",
+         "image": "https://avatar-ex-swe.nixcdn.com/song/2022/12/06/8/b/9/3/1670318086733.jpg",
+         "singer": [
+            {
+               "id": 1,
+               "name": "Đinh Tùng Huy"
+            }
+         ],
+         "listen_count": 0,
+         "follow_count": 0,
+         "duration": "05:30",
+         "create_at": "2022-12-12 09:30:30",
+         "update_at": "2022-12-12 09:30:30"
+      },
+      {
+         "id": 2,
+         "name": "Tình đẹp đến mấy cũng tàn",
+         "source": "",
+         "image": "https://avatar-ex-swe.nixcdn.com/song/2022/12/06/8/b/9/3/1670318086733.jpg",
+         "singer": [
+            {
+               "id": 1,
+               "name": "Như Việt"
+            }
+         ],
+         "listen_count": 0,
+         "follow_count": 0,
+         "duration": "06:30",
+         "create_at": "2022-12-12 09:30:30",
+         "update_at": "2022-12-12 09:30:30"
+      },
+      {
+         "id": 3,
+         "name": "Một bước yêu vạn dặm đau",
+         "source": "",
+         "image": "https://avatar-ex-swe.nixcdn.com/song/2022/12/06/8/b/9/3/1670318086733.jpg",
+         "singer": [
+            {
+               "id": 1,
+               "name": "Mr.Siro"
+            }
+         ],
+         "listen_count": 0,
+         "follow_count": 0,
+         "duration": "04:30",
+         "create_at": "2022-12-12 09:30:30",
+         "update_at": "2022-12-12 09:30:30"
+      }
+   ],
+
+   "keywords": [
+      {
+         "id": 1,
+         "keyword": "abc"
+      },
+      {
+         "id": 2,
+         "keyword": "abc"
+      },
+      {
+         "keyword": "yêu",
+         "id": 3
+      }
+   ],
+
+   "users": [
+      {
+         "email": "chungzmg@gmail.com",
+         "password": "$2a$10$cUMd2SOSW1IIFyDQBwx2z.vvD2BhgJyDiNGXAoGCkuprqIeeCI5ci",
+         "name": "Chung Nguyễn",
+         "id": 3
+      },
+      {
+         "email": "chung@gmail.com",
+         "password": "$2a$10$kRO1rjBh9Oo8jRQkxk54Deto9S/yu3DIMm8et2R2oqgntKJ7eYy6K",
+         "name": "Anh Chung Nguyen",
+         "id": 4
+      },
+      {
+         "email": "chungnguyen3@gmail.com",
+         "password": "$2a$10$aS3fATOkBdnbdJ3qURbTlOoZ3Ik2Xth27UnRe2IXEhph8EbJ4ceaK",
+         "name": "Chung",
+         "id": 5
+      },
+      {
+         "email": "chungnguyen2@gmail.com",
+         "password": "$2a$10$NTttGi2Zo3FNgYmc2yvsK.xTHiXGRQKB2eLHsob8wv0ip2rIQ.jvS",
+         "name": "Chung",
+         "id": 6
+      },
+      {
+         "email": "chungnguyen3@gmail.com",
+         "password": "$2a$10$OFZqvJvho9H851jrjaN6duM8Jop02hVMt2wUB/innTZnuUZLaxhqG",
+         "name": "Chung",
+         "id": 7
+      },
+      {
+         "email": "chungnguyen123@gmail.com",
+         "password": "$2a$10$VzxUKVIEQ/R4Lp2xMXxhFOQQ0d5.Lj68N6vnYTHtuYRc8m.xadAHy",
+         "name": "Chung",
+         "id": 8
+      },
+      {
+         "email": "chung123@gmail.com",
+         "password": "$2a$10$HEEP4ZZ2a0ikqzU.ZJJ7LOXyKQMbFGazvdoFCr56z/D69au/wBGH2",
+         "name": "Chung",
+         "id": 9
+      }
+   ],
+
+   "categories" : [
+      {
+         "id": 1,
+         "name": "Khúc nhạc vui",
+         "image": "https://photo-zmp3.zmdcdn.me/cover/0/9/0/9/09090b19d3417d364547db3027d141d5.jpg",
+         "playlists": [
+            {
+               "id": 1,
+               "name": "Nhạc trẻ mới nhất",
+               "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/b/4/3/d/b43d77d3bf42808cbbc56bff6709b991.jpg",
+               "create_at": "2022-12-12 09:30:30",
+               "update_at": "2022-12-12 09:30:30"
+            },
+            {
+               "id": 2,
+               "name": "Nhạc remix sôi động",
+               "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/3/5/3/8/3538565766aee9c4a61c1ff4aeb5a07d.jpg",
+               "create_at": "2022-12-12 09:30:30",
+               "update_at": "2022-12-12 09:30:30"
+            },
+            {
+               "id": 3,
+               "name": "Nhạc bolero hay",
+               "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/d/6/5/3/d653f35e5252395e2b26b4dd7942a811.jpg",
+               "create_at": "2022-12-12 09:30:30",
+               "update_at": "2022-12-12 09:30:30"
+            }
+         ],
+         "create_at": "2022-12-12 09:30:30",
+         "update_at": "2022-12-12 09:30:30"
+      },
+
+      {
+         "id": 2,
+         "name": "Tập trung",
+         "image": "https://photo-zmp3.zmdcdn.me/cover/b/1/e/b/b1eb8ae84392957f9b9d1ce2bb42aab9.jpg",
+         "playlists": [
+            {
+               "id": 1,
+               "name": "Nhạc trẻ mới nhất",
+               "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/b/4/3/d/b43d77d3bf42808cbbc56bff6709b991.jpg",
+               "create_at": "2022-12-12 09:30:30",
+               "update_at": "2022-12-12 09:30:30"
+            },
+            {
+               "id": 2,
+               "name": "Nhạc remix sôi động",
+               "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/3/5/3/8/3538565766aee9c4a61c1ff4aeb5a07d.jpg",
+               "create_at": "2022-12-12 09:30:30",
+               "update_at": "2022-12-12 09:30:30"
+            },
+            {
+               "id": 3,
+               "name": "Nhạc bolero hay",
+               "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/d/6/5/3/d653f35e5252395e2b26b4dd7942a811.jpg",
+               "create_at": "2022-12-12 09:30:30",
+               "update_at": "2022-12-12 09:30:30"
+            }
+         ],
+         "create_at": "2022-12-12 09:30:30",
+         "update_at": "2022-12-12 09:30:30"
+      },
+
+      {
+         "id": 3,
+         "name": "Tình yêu",
+         "image": "https://photo-zmp3.zmdcdn.me/cover/0/a/e/f/0aef849d584c7e995073617f53b9ac24.jpg",
+         "playlists": [
+            {
+               "id": 1,
+               "name": "Nhạc trẻ mới nhất",
+               "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/b/4/3/d/b43d77d3bf42808cbbc56bff6709b991.jpg",
+               "create_at": "2022-12-12 09:30:30",
+               "update_at": "2022-12-12 09:30:30"
+            },
+            {
+               "id": 2,
+               "name": "Nhạc remix sôi động",
+               "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/d/6/5/3/d653f35e5252395e2b26b4dd7942a811.jpg",
+               "create_at": "2022-12-12 09:30:30",
+               "update_at": "2022-12-12 09:30:30"
+            },
+            {
+               "id": 3,
+               "name": "Nhạc bolero hay",
+               "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/3/5/3/8/3538565766aee9c4a61c1ff4aeb5a07d.jpg",
+               "create_at": "2022-12-12 09:30:30",
+               "update_at": "2022-12-12 09:30:30"
+            },
+            {
+               "id": 4,
+               "name": "Nhạc trữ tình",
+               "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/3/5/3/8/3538565766aee9c4a61c1ff4aeb5a07d.jpg",
+               "create_at": "2022-12-12 09:30:30",
+               "update_at": "2022-12-12 09:30:30"
+            }
+         ],
+         "create_at": "2022-12-12 09:30:30",
+         "update_at": "2022-12-12 09:30:30"
+      },
+
+      {
+         "id": 4,
+         "name": "SPA - YOGA",
+         "image": "https://photo-zmp3.zmdcdn.me/cover/d/0/d/7/d0d772a6c3e35b3e768d5c3ebf644ecd.jpg",
+         "playlists": [
+            {
+               "id": 1,
+               "name": "Nhạc trẻ mới nhất",
+               "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/b/4/3/d/b43d77d3bf42808cbbc56bff6709b991.jpg",
+               "create_at": "2022-12-12 09:30:30",
+               "update_at": "2022-12-12 09:30:30"
+            },
+            {
+               "id": 2,
+               "name": "Nhạc remix sôi động",
+               "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/d/6/5/3/d653f35e5252395e2b26b4dd7942a811.jpg",
+               "create_at": "2022-12-12 09:30:30",
+               "update_at": "2022-12-12 09:30:30"
+            },
+            {
+               "id": 3,
+               "name": "Nhạc bolero hay",
+               "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/3/5/3/8/3538565766aee9c4a61c1ff4aeb5a07d.jpg",
+               "create_at": "2022-12-12 09:30:30",
+               "update_at": "2022-12-12 09:30:30"
+            },
+            {
+               "id": 4,
+               "name": "Nhạc trữ tình",
+               "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/3/5/3/8/3538565766aee9c4a61c1ff4aeb5a07d.jpg",
+               "create_at": "2022-12-12 09:30:30",
+               "update_at": "2022-12-12 09:30:30"
+            }
+         ],
+         "create_at": "2022-12-12 09:30:30",
+         "update_at": "2022-12-12 09:30:30"
+      },
+
+      {
+         "id": 5,
+         "name": "Du lịch",
+         "image": "https://photo-zmp3.zmdcdn.me/cover/e/3/d/4/e3d43659c6dc756f87f4e44220313f92.jpg",
+         "playlists": [
+            {
+               "id": 1,
+               "name": "Nhạc trẻ mới nhất",
+               "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/b/4/3/d/b43d77d3bf42808cbbc56bff6709b991.jpg",
+               "create_at": "2022-12-12 09:30:30",
+               "update_at": "2022-12-12 09:30:30"
+            },
+            {
+               "id": 2,
+               "name": "Nhạc remix sôi động",
+               "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/3/5/3/8/3538565766aee9c4a61c1ff4aeb5a07d.jpg",
+               "create_at": "2022-12-12 09:30:30",
+               "update_at": "2022-12-12 09:30:30"
+            },
+            {
+               "id": 3,
+               "name": "Nhạc bolero hay",
+               "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/d/6/5/3/d653f35e5252395e2b26b4dd7942a811.jpg",
+               "create_at": "2022-12-12 09:30:30",
+               "update_at": "2022-12-12 09:30:30"
+            }
+         ],
+         "create_at": "2022-12-12 09:30:30",
+         "update_at": "2022-12-12 09:30:30"
+      },
+      {
+         "id": 6,
+         "name": "Ngủ ngon",
+         "image": "https://photo-zmp3.zmdcdn.me/cover/4/a/3/b/4a3b5265ee2c9e2c84f5a88194382b5d.jpg",
+         "playlists": [
+            {
+               "id": 1,
+               "name": "Nhạc trẻ mới nhất",
+               "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/b/4/3/d/b43d77d3bf42808cbbc56bff6709b991.jpg",
+               "create_at": "2022-12-12 09:30:30",
+               "update_at": "2022-12-12 09:30:30"
+            },
+            {
+               "id": 2,
+               "name": "Nhạc remix sôi động",
+               "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/3/5/3/8/3538565766aee9c4a61c1ff4aeb5a07d.jpg",
+               "create_at": "2022-12-12 09:30:30",
+               "update_at": "2022-12-12 09:30:30"
+            },
+            {
+               "id": 3,
+               "name": "Nhạc bolero hay",
+               "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/d/6/5/3/d653f35e5252395e2b26b4dd7942a811.jpg",
+               "create_at": "2022-12-12 09:30:30",
+               "update_at": "2022-12-12 09:30:30"
+            }
+         ],
+         "create_at": "2022-12-12 09:30:30",
+         "update_at": "2022-12-12 09:30:30"
+      },
+
+      {
+         "id": 7,
+         "name": "Workout",
+         "image": "https://photo-zmp3.zmdcdn.me/cover/d/b/5/c/db5cf069b328c7858b2d9642cc6b4529.jpg",
+         "playlists": [
+            {
+               "id": 1,
+               "name": "Nhạc trẻ mới nhất",
+               "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/b/4/3/d/b43d77d3bf42808cbbc56bff6709b991.jpg",
+               "create_at": "2022-12-12 09:30:30",
+               "update_at": "2022-12-12 09:30:30"
+            },
+            {
+               "id": 2,
+               "name": "Nhạc remix sôi động",
+               "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/d/6/5/3/d653f35e5252395e2b26b4dd7942a811.jpg",
+               "create_at": "2022-12-12 09:30:30",
+               "update_at": "2022-12-12 09:30:30"
+            },
+            {
+               "id": 3,
+               "name": "Nhạc bolero hay",
+               "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/3/5/3/8/3538565766aee9c4a61c1ff4aeb5a07d.jpg",
+               "create_at": "2022-12-12 09:30:30",
+               "update_at": "2022-12-12 09:30:30"
+            },
+            {
+               "id": 4,
+               "name": "Nhạc trữ tình",
+               "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/3/5/3/8/3538565766aee9c4a61c1ff4aeb5a07d.jpg",
+               "create_at": "2022-12-12 09:30:30",
+               "update_at": "2022-12-12 09:30:30"
+            }
+         ],
+         "create_at": "2022-12-12 09:30:30",
+         "update_at": "2022-12-12 09:30:30"
+      },
+      {
+         "id": 8,
+         "name": "Motivation",
+         "image": "https://photo-zmp3.zmdcdn.me/cover/9/5/1/b/951bb18f468ea711a81a0dd28a8797d4.jpg",
+         "playlists": [
+            {
+               "id": 1,
+               "name": "Nhạc trẻ mới nhất",
+               "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/b/4/3/d/b43d77d3bf42808cbbc56bff6709b991.jpg",
+               "create_at": "2022-12-12 09:30:30",
+               "update_at": "2022-12-12 09:30:30"
+            },
+            {
+               "id": 2,
+               "name": "Nhạc remix sôi động",
+               "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/d/6/5/3/d653f35e5252395e2b26b4dd7942a811.jpg",
+               "create_at": "2022-12-12 09:30:30",
+               "update_at": "2022-12-12 09:30:30"
+            },
+            {
+               "id": 3,
+               "name": "Nhạc bolero hay",
+               "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/3/5/3/8/3538565766aee9c4a61c1ff4aeb5a07d.jpg",
+               "create_at": "2022-12-12 09:30:30",
+               "update_at": "2022-12-12 09:30:30"
+            },
+            {
+               "id": 4,
+               "name": "Nhạc trữ tình",
+               "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/3/5/3/8/3538565766aee9c4a61c1ff4aeb5a07d.jpg",
+               "create_at": "2022-12-12 09:30:30",
+               "update_at": "2022-12-12 09:30:30"
+            }
+         ],
+         "create_at": "2022-12-12 09:30:30",
+         "update_at": "2022-12-12 09:30:30"
+      }
+   ]
 }

@@ -6,10 +6,11 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { getUser } from "./authSlice";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 function Login(props) {
    const client = useClient();
-
+   const navigate = useNavigate();
    const dispatch = useDispatch();
 
    const [form, setForm] = useState({
@@ -48,6 +49,10 @@ function Login(props) {
          dispatch(getUser());
 
          toast.success("Đăng nhập thành công");
+
+         setTimeout( () => {
+            navigate('/ca-nhan')
+         }, 800)
       } else {
          toast.error("Email hoặc mật khẩu không chính xác");
       }

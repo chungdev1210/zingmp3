@@ -19,11 +19,6 @@ function Header(props) {
       setHide(isHide ? false : true);
    };
 
-   useEffect(() => {
-      dispatch(getUser());
-   }, []);
-
-   console.log(isAuth);
 
    return (
       <div className="zing-header">
@@ -278,20 +273,20 @@ function Header(props) {
                      <p>Chào: {userLogin.name}</p>
                      <ul>
                         <li>
-                           <a href="">Cá nhân</a>
+                           <Link to="/profile">Cá nhân</Link>
                         </li>
                         <li>
-                           <Link to="/dang-xuat">Đăng xuất</Link>
+                           <Link to="/logout">Đăng xuất</Link>
                         </li>
                      </ul>
                   </>
                ) : (
                   <ul>
                      <li>
-                        <Link to="/dang-nhap">Đăng nhập</Link>
+                        <Link to="/login">Đăng nhập</Link>
                      </li>
                      <li>
-                        <Link to="/dang-ky">Đăng ký</Link>
+                        <Link to="/register">Đăng ký</Link>
                      </li>
                   </ul>
                )}
