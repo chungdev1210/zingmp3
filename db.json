@@ -116,27 +116,70 @@
    "categories" : [
       {
          "id": 1,
-         "name": "Khúc nhạc vui",
-         "image": "https://photo-zmp3.zmdcdn.me/cover/0/9/0/9/09090b19d3417d364547db3027d141d5.jpg",
+         "name": "Tình yêu",
+         "image": "https://photo-zmp3.zmdcdn.me/cover/0/a/e/f/0aef849d584c7e995073617f53b9ac24.jpg",
+         "banner": "https://photo-zmp3.zmdcdn.me/cover/5/7/d/b/57dbc9145318876d3d79e26a99ec8a83.jpg",
          "playlists": [
             {
                "id": 1,
-               "name": "Nhạc trẻ mới nhất",
-               "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/b/4/3/d/b43d77d3bf42808cbbc56bff6709b991.jpg",
+               "name": "Anh thương em nhất mà",
+               "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/a/f/0/3/af03471f82f47172e420118d27ff889d.jpg",
                "create_at": "2022-12-12 09:30:30",
                "update_at": "2022-12-12 09:30:30"
             },
             {
                "id": 2,
-               "name": "Nhạc remix sôi động",
-               "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/3/5/3/8/3538565766aee9c4a61c1ff4aeb5a07d.jpg",
+               "name": "Yêu lại người yêu cũ",
+               "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/f/2/d/5/f2d5a52fbcf855d7b60cce4b69e6dfb0.jpg",
                "create_at": "2022-12-12 09:30:30",
                "update_at": "2022-12-12 09:30:30"
             },
             {
                "id": 3,
-               "name": "Nhạc bolero hay",
-               "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/d/6/5/3/d653f35e5252395e2b26b4dd7942a811.jpg",
+               "name": "Yêu là phải nói",
+               "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/e/4/d/5/e4d5f207c07c10af7545fa12fe983241.jpg",
+               "create_at": "2022-12-12 09:30:30",
+               "update_at": "2022-12-12 09:30:30"
+            },
+            {
+               "id": 4,
+               "name": "Cảm xúc tình yêu",
+               "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/b/c/b/6/bcb6fb28368d94174cf1be8e3255fc66.jpg",
+               "create_at": "2022-12-12 09:30:30",
+               "update_at": "2022-12-12 09:30:30"
+            },
+            {
+               "id": 5,
+               "name": "Toà án tình yêu",
+               "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/6/2/1/3/62136e8d25a0b254544ffe66faed1406.jpg",
+               "create_at": "2022-12-12 09:30:30",
+               "update_at": "2022-12-12 09:30:30"
+            },
+            {
+               "id": 6,
+               "name": "Muốn yêu ai đó cả cuộc đời",
+               "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/a/4/2/e/a42e5c1036f466866402de46f167fb2b.jpg",
+               "create_at": "2022-12-12 09:30:30",
+               "update_at": "2022-12-12 09:30:30"
+            },
+            {
+               "id": 7,
+               "name": "Mình hẹn hò đi anh",
+               "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/2/3/2/9/2329df2fcfaf90d0156ecb1c9a3ae131.jpg",
+               "create_at": "2022-12-12 09:30:30",
+               "update_at": "2022-12-12 09:30:30"
+            },
+            {
+               "id": 8,
+               "name": "Hạnh phúc khi anh có em",
+               "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/c/b/9/d/cb9dedfa0296a1fbdde19d3e6e75d7f7.jpg",
+               "create_at": "2022-12-12 09:30:30",
+               "update_at": "2022-12-12 09:30:30"
+            },
+            {
+               "id": 9,
+               "name": "Cho mình em",
+               "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/e/9/f/f/e9ff9204f9d225104e0b5eef4f29ec58.jpg",
                "create_at": "2022-12-12 09:30:30",
                "update_at": "2022-12-12 09:30:30"
             }
@@ -178,8 +221,8 @@
 
       {
          "id": 3,
-         "name": "Tình yêu",
-         "image": "https://photo-zmp3.zmdcdn.me/cover/0/a/e/f/0aef849d584c7e995073617f53b9ac24.jpg",
+         "name": "Khúc nhạc vui",
+         "image": "https://photo-zmp3.zmdcdn.me/cover/0/9/0/9/09090b19d3417d364547db3027d141d5.jpg",
          "playlists": [
             {
                "id": 1,
@@ -380,6 +423,44 @@
                "id": 4,
                "name": "Nhạc trữ tình",
                "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/3/5/3/8/3538565766aee9c4a61c1ff4aeb5a07d.jpg",
+               "create_at": "2022-12-12 09:30:30",
+               "update_at": "2022-12-12 09:30:30"
+            }
+         ],
+         "create_at": "2022-12-12 09:30:30",
+         "update_at": "2022-12-12 09:30:30"
+      },
+      {
+         "id": 9,
+         "name": "Chơi game",
+         "image": "https://photo-zmp3.zmdcdn.me/cover/4/d/f/4/4df44f0a15edb254717c383cf256b193.jpg",
+         "banner": "https://photo-zmp3.zmdcdn.me/cover/9/2/4/d/924d799e99bc603fe8aab02284711de1.jpg",
+         "playlists": [
+            {
+               "id": 1,
+               "name": "Nhạc nghe khi leo rank",
+               "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/7/c/3/f/7c3fe07231bc4e4e67854b7fbf46a78e.jpg",
+               "create_at": "2022-12-12 09:30:30",
+               "update_at": "2022-12-12 09:30:30"
+            },
+            {
+               "id": 2,
+               "name": "Một mình gánh team",
+               "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/7/b/7/6/7b766c4c4debc2ea417c48e0f0416a55.jpg",
+               "create_at": "2022-12-12 09:30:30",
+               "update_at": "2022-12-12 09:30:30"
+            },
+            {
+               "id": 3,
+               "name": "Best gank",
+               "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/f/a/1/1/fa116477fb11d4e67d06781ad271d060.jpg",
+               "create_at": "2022-12-12 09:30:30",
+               "update_at": "2022-12-12 09:30:30"
+            },
+            {
+               "id": 4,
+               "name": "K-Pop dance gaming",
+               "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/5/3/f/c/53fc6310a587d0a99e509a1d1fa4f2ef.jpg",
                "create_at": "2022-12-12 09:30:30",
                "update_at": "2022-12-12 09:30:30"
             }

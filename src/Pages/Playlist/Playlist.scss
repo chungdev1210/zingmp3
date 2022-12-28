@@ -1,0 +1,169 @@
+.playlist__album {
+    margin-top: 60px;
+
+    .playlist__left {
+        width: 300px;
+        display: block;
+        width: 300px;
+        float: left;
+
+        // margin-right: 0;
+        .playlist__card {
+            .card--image {
+                img {
+                    width: 100%;
+                    border-radius: 5px;
+                }
+            }
+
+            .card--content {
+                margin-top: 12px;
+
+                .content-top {
+                    text-align: center;
+                    width: 100%;
+
+                    .title {
+                        color: #FFFFFF;
+                        font-size: 20px;
+                        font-weight: 700;
+                        line-height: 1.5;
+                        margin-bottom: 0;
+                        width: 100%;
+                    }
+
+                    .release {
+                        font-size: 14px;
+                        line-height: 1.75;
+                        color: #FFFFFF80;
+                    }
+
+                    .like {
+                        font-size: 14px;
+                        line-height: 1.75;
+                        color: #FFFFFF80;
+                    }
+
+                    .artists {
+                        color: #FFFFFF80;
+
+                        a {
+                            text-decoration: none;
+                            font-size: 14px;
+                            color: #FFFFFF80;
+                        }
+                    }
+                }
+
+                .actions {
+                    margin-top: 12px;
+
+                    .btn-play {
+                        margin-right: auto;
+                        margin-left: auto;
+                        color: #fff;
+                        font-size: 14px;
+                        padding: 9px 24px;
+                        border-radius: 999px;
+                        background-color: #9b4de0;
+                        border: none;
+                        text-transform: uppercase;
+                        font-weight: 400;
+                        display: flex;
+                        justify-content: center;
+
+                        .actions--icon {
+                            padding-right: 4px;
+                        }
+                    }
+
+                    .btn-play:hover {
+                        filter: brightness(.9);
+                    }
+
+                    .level {
+                        display: flex;
+                        justify-content: center;
+                        gap: 12px;
+                        margin-top: 12px;
+                        button {
+                            width: 35px;
+                            height: 35px;
+                            background-color: #FFFFFF1A;
+                            font-size: 14px;
+                            border-radius: 999px;
+                            border: 0;
+                            display: inline-block;
+                            font-weight: 400;
+                            text-align: center;
+                            cursor: pointer;
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+    .playlist__right {
+        margin-left: 320px;
+        color: #FFFFFF;
+        .decription {
+            span {
+                font-size: 14px;
+            }
+        }
+        .list {
+            margin-top: 20px;
+            .media {
+                display: flex;
+                color: #FFFFFF80;
+                border-bottom: 1px solid #FFFFFF1A;
+                .media-left {
+                    width: 50%;
+                    span {
+                        font-size: 12px;
+                        font-weight: 500;
+                        text-transform: uppercase;
+                        line-height: 17px;
+                    }
+                    .sort-wrapper {
+                        display: flex;
+                        justify-content: flex-start;
+                        button {
+                            margin-right: 6px;
+                            background: transparent;
+                            border: none;
+                            .icon {
+                                color: #FFFFFF80;
+                                font-size: 16px;
+                            }
+                        }
+                    }
+                }
+                .media-center {
+                    font-size: 12px;
+                    font-weight: 500;
+                    text-transform: uppercase;
+                    margin-left: -10px;
+                    flex-basis: auto;
+                    flex-grow: 1;
+                    flex-shrink: 1;
+                    text-align: left;
+                    align-self: center;
+                    width: 0;
+                }
+                .media-right {
+                    font-size: 12px;
+                    font-weight: 500;
+                    text-transform: uppercase;
+                    flex-basis: auto;
+                    flex-grow: 0;
+                    flex-shrink: 0;
+                    margin-left: 10px;
+                    line-height: 19px;
+                }
+            }
+        }
+    }
+}

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 * {
    margin: 0;
    padding: 0;
@@ -7,7 +9,7 @@
 }
 
 html {
-   font-family: Arial, Helvetica, sans-serif;
+   font-family: Inter,sans-serif;
    font-size: 16px;
    -ms-overflow-style: none;
    /* khai báo sử dụng Internet Explorer, Edge */
@@ -23,6 +25,7 @@ html::-webkit-scrollbar {
 :root {
    --height-header: 70px;
    --color-white: #dadada;
+   --background: #170f23;
    --background-while: rgba(225, 225, 225, 0.05);
    --background-black: rgba(0, 0, 0, 0.8);
    --background-modal: rgba(0, 0, 0, 0.6);
@@ -65,7 +68,7 @@ html::-webkit-scrollbar {
    position: absolute;
    width: 100%;
    height: 100%;
-   background: #061D4F;
+   background: #170f23;
    z-index: -1;
 }
 
@@ -252,6 +255,7 @@ html::-webkit-scrollbar {
    display: flex;
    justify-content: space-between;
    z-index: 10;
+   background: #170f23;
    .profile {
       position: absolute;
       right: -45px;
