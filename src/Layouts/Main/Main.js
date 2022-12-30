@@ -6,6 +6,7 @@ import Sidebar from "../Sidebar/Sidebar";
 import { useDispatch } from "react-redux";
 import { getUser } from "../../Pages/Auth/authSlice";
 import { useEffect } from "react";
+import Player from "../../Components/Player/Player";
 
 function Main(props) {
    const dispatch = useDispatch();
@@ -26,6 +27,7 @@ function Main(props) {
                   </div>
                </div>
             </div>
+            <Player />
          </div>
       </div>
    );

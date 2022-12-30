@@ -58,7 +58,7 @@ function Playlist(props) {
                <span> Đừng mải mê đi rong chơi mà quên đi rằng trong đêm còn có em đợi anh về nhà. Ngoài kia bao điều mặn đắng, anh đừng lăn tăn, về nhà thôi.</span>
             </div>
             <div className="list">
-               <div className="media select-header">
+               <div className="media-header select-header">
                   <div className="media-left">
                      <div className="sort-wrapper">
                         <button>
@@ -69,6 +69,252 @@ function Playlist(props) {
                   </div>
                   <div className="media-center">Album</div>
                   <div className="media-right">Thời gian</div>
+               </div>
+               <div className="select--item">
+                  <div className="checkbox-wrapper">
+                     <label className="checkbox">
+                        <input type="checkbox" />
+                     </label>
+                  </div>
+                  <div className="media--item">
+                     <div className="media-content">
+                        <div className="media--left">
+                           <div className="media--icon">
+                              <IonIcon name="musical-notes-outline"></IonIcon>
+                           </div>
+                           <div className="media--img">
+                              <img src="https://photo-resize-zmp3.zmdcdn.me/w94_r1x1_webp/cover/6/6/f/4/66f40f8639e0e23f95e444f3d9368c9c.jpg" alt="" />
+                           </div>
+                           <div className="media--info">
+                              <div className="media--info_title">
+                                 <span>Sao anh chưa về nhà</span>
+                              </div>
+                              <div className="media--info_singers">
+                                 <span>AMEE</span>
+                              </div>
+                           </div>
+                        </div>
+                        <div className="media--center">
+                           <a href="#" className="title">Sao anh chưa về nhà(Singer)</a>
+                        </div>
+                        <div className="media--right">
+                           <div className="duration">
+                              04:07
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div className="select--item">
+                  <div className="checkbox-wrapper">
+                     <label className="checkbox">
+                        <input type="checkbox" />
+                     </label>
+                  </div>
+                  <div className="media--item">
+                     <div className="media-content">
+                        <div className="media--left">
+                           <div className="media--icon">
+                              <IonIcon name="musical-notes-outline"></IonIcon>
+                           </div>
+                           <div className="media--img">
+                              <img src="https://photo-resize-zmp3.zmdcdn.me/w94_r1x1_webp/cover/6/6/f/4/66f40f8639e0e23f95e444f3d9368c9c.jpg" alt="" />
+                           </div>
+                           <div className="media--info">
+                              <div className="media--info_title">
+                                 <span>Sao anh chưa về nhà</span>
+                              </div>
+                              <div className="media--info_singers">
+                                 <span>AMEE</span>
+                              </div>
+                           </div>
+                        </div>
+                        <div className="media--center">
+                           <a href="#" className="title">Sao anh chưa về nhà(Singer)</a>
+                        </div>
+                        <div className="media--right">
+                           <div className="duration">
+                              04:07
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div className="select--item">
+                  <div className="checkbox-wrapper">
+                     <label className="checkbox">
+                        <input type="checkbox" />
+                     </label>
+                  </div>
+                  <div className="media--item">
+                     <div className="media-content">
+                        <div className="media--left">
+                           <div className="media--icon">
+                              <IonIcon name="musical-notes-outline"></IonIcon>
+                           </div>
+                           <div className="media--img">
+                              <img src="https://photo-resize-zmp3.zmdcdn.me/w94_r1x1_webp/cover/6/6/f/4/66f40f8639e0e23f95e444f3d9368c9c.jpg" alt="" />
+                           </div>
+                           <div className="media--info">
+                              <div className="media--info_title">
+                                 <span>Sao anh chưa về nhà</span>
+                              </div>
+                              <div className="media--info_singers">
+                                 <span>AMEE</span>
+                              </div>
+                           </div>
+                        </div>
+                        <div className="media--center">
+                           <a href="#" className="title">Sao anh chưa về nhà(Singer)</a>
+                        </div>
+                        <div className="media--right">
+                           <div className="duration">
+                              04:07
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div className="select--item">
+                  <div className="checkbox-wrapper">
+                     <label className="checkbox">
+                        <input type="checkbox" />
+                     </label>
+                  </div>
+                  <div className="media--item">
+                     <div className="media-content">
+                        <div className="media--left">
+                           <div className="media--icon">
+                              <IonIcon name="musical-notes-outline"></IonIcon>
+                           </div>
+                           <div className="media--img">
+                              <img src="https://photo-resize-zmp3.zmdcdn.me/w94_r1x1_webp/cover/6/6/f/4/66f40f8639e0e23f95e444f3d9368c9c.jpg" alt="" />
+                           </div>
+                           <div className="media--info">
+                              <div className="media--info_title">
+                                 <span>Sao anh chưa về nhà</span>
+                              </div>
+                              <div className="media--info_singers">
+                                 <span>AMEE</span>
+                              </div>
+                           </div>
+                        </div>
+                        <div className="media--center">
+                           <a href="#" className="title">Sao anh chưa về nhà(Singer)</a>
+                        </div>
+                        <div className="media--right">
+                           <div className="duration">
+                              04:07
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div className="select--item">
+                  <div className="checkbox-wrapper">
+                     <label className="checkbox">
+                        <input type="checkbox" />
+                     </label>
+                  </div>
+                  <div className="media--item">
+                     <div className="media-content">
+                        <div className="media--left">
+                           <div className="media--icon">
+                              <IonIcon name="musical-notes-outline"></IonIcon>
+                           </div>
+                           <div className="media--img">
+                              <img src="https://photo-resize-zmp3.zmdcdn.me/w94_r1x1_webp/cover/6/6/f/4/66f40f8639e0e23f95e444f3d9368c9c.jpg" alt="" />
+                           </div>
+                           <div className="media--info">
+                              <div className="media--info_title">
+                                 <span>Sao anh chưa về nhà</span>
+                              </div>
+                              <div className="media--info_singers">
+                                 <span>AMEE</span>
+                              </div>
+                           </div>
+                        </div>
+                        <div className="media--center">
+                           <a href="#" className="title">Sao anh chưa về nhà(Singer)</a>
+                        </div>
+                        <div className="media--right">
+                           <div className="duration">
+                              04:07
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div className="select--item">
+                  <div className="checkbox-wrapper">
+                     <label className="checkbox">
+                        <input type="checkbox" />
+                     </label>
+                  </div>
+                  <div className="media--item">
+                     <div className="media-content">
+                        <div className="media--left">
+                           <div className="media--icon">
+                              <IonIcon name="musical-notes-outline"></IonIcon>
+                           </div>
+                           <div className="media--img">
+                              <img src="https://photo-resize-zmp3.zmdcdn.me/w94_r1x1_webp/cover/6/6/f/4/66f40f8639e0e23f95e444f3d9368c9c.jpg" alt="" />
+                           </div>
+                           <div className="media--info">
+                              <div className="media--info_title">
+                                 <span>Sao anh chưa về nhà</span>
+                              </div>
+                              <div className="media--info_singers">
+                                 <span>AMEE</span>
+                              </div>
+                           </div>
+                        </div>
+                        <div className="media--center">
+                           <a href="#" className="title">Sao anh chưa về nhà(Singer)</a>
+                        </div>
+                        <div className="media--right">
+                           <div className="duration">
+                              04:07
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+
+               <div className="select--item">
+                  <div className="checkbox-wrapper">
+                     <label className="checkbox">
+                        <input type="checkbox" />
+                     </label>
+                  </div>
+                  <div className="media--item">
+                     <div className="media-content">
+                        <div className="media--left">
+                           <div className="media--icon">
+                              <IonIcon name="musical-notes-outline"></IonIcon>
+                           </div>
+                           <div className="media--img">
+                              <img src="https://photo-resize-zmp3.zmdcdn.me/w94_r1x1_webp/cover/6/6/f/4/66f40f8639e0e23f95e444f3d9368c9c.jpg" alt="" />
+                           </div>
+                           <div className="media--info">
+                              <div className="media--info_title">
+                                 <span>Sao anh chưa về nhà về nhà</span>
+                              </div>
+                              <div className="media--info_singers">
+                                 <span>AMEE</span>
+                              </div>
+                           </div>
+                        </div>
+                        <div className="media--center">
+                           <a href="#" className="title">Sao anh chưa về nhà(Singer)</a>
+                        </div>
+                        <div className="media--right">
+                           <div className="duration">
+                              04:07
+                           </div>
+                        </div>
+                     </div>
+                  </div>
                </div>
             </div>
          </div>

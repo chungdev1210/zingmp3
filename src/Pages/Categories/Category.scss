@@ -84,10 +84,13 @@
         padding: 20px;
         display: flex;
         flex-wrap: wrap;
-        .category__detail--item {
+        .tag_link {
             width: calc( 100% / 5 );
             padding: 0 15px;
             margin-bottom: 30px;
+            text-decoration: none;
+        }
+        .category__detail--item {
             .category__detail--item_img {
                 position: relative;
                 overflow: hidden;

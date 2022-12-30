@@ -13,10 +13,10 @@ export const publicRoutes = (
     <Route path="/login" element={<Login />} />
     <Route path="/logout" element={<Logout />} />
     <Route path="/register" element={<Register />} />
-    <Route path="/playlist" element={<Playlist />} />
     <Route path="/hub">
       <Route path="" element={<Categories />} />
-      <Route path=":slug--:id.html" element={<CategoryDetail />}></Route>
+      <Route path=":slug--:id.html" element={<CategoryDetail />} />
     </Route>
+    <Route path="/album/:slug--:id.html" element={<Playlist />} />
   </>
 );

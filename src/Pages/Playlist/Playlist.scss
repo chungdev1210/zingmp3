@@ -115,12 +115,15 @@
         }
         .list {
             margin-top: 20px;
-            .media {
+            .media-header {
                 display: flex;
                 color: #FFFFFF80;
                 border-bottom: 1px solid #FFFFFF1A;
+                border-radius: 5px;
+                height: 35px;
+                padding: 8px;
                 .media-left {
-                    width: 50%;
+                    width: 49%;
                     span {
                         font-size: 12px;
                         font-weight: 500;
@@ -135,6 +138,7 @@
                             background: transparent;
                             border: none;
                             .icon {
+                                margin: 0 2px 0 0;
                                 color: #FFFFFF80;
                                 font-size: 16px;
                             }
@@ -150,7 +154,7 @@
                     flex-grow: 1;
                     flex-shrink: 1;
                     text-align: left;
-                    align-self: center;
+                    // align-self: center;
                     width: 0;
                 }
                 .media-right {
@@ -163,6 +167,85 @@
                     margin-left: 10px;
                     line-height: 19px;
                 }
+            }
+            .select--item {
+                border-bottom: 1px solid #FFFFFF1A;
+                border-radius: 5px;
+                .media--item {
+                    max-width: 100%;
+                    flex-grow: 1;
+                    .media-content {
+                        align-items: center;
+                        display: flex;
+                        text-align: left;
+                        padding: 8px;
+                        border-radius: 5px;
+                        .media--left {
+                            display: flex;
+                            width: 49%;
+                            .media--icon {
+                                margin-right: 10px;
+                                line-height: 40px;
+                            }
+                            .media--img {
+                                margin-right: 10px;
+                                flex-shrink: 0;
+                                width: 40px;
+                                height: 40px;
+                                img {
+                                    width: 100%;
+                                    border-radius: 3px;
+                                }
+                            }
+                            .media--info {
+                                height: 40px;
+                                .media--info_title {
+                                    color: #FFFFFF;
+                                    font-size: 14px;
+                                    font-weight: 600;
+                                    text-transform: capitalize;
+                                }
+                                .media--info_singers {
+                                    padding-top: 6px;
+                                    color: #FFFFFF80;
+                                    font-size: 12px;
+                                }
+                            }
+                        }
+                        .media--center {
+                            margin-left: -10px;
+                            flex-basis: auto;
+                            flex-grow: 1;
+                            text-align: left;
+                            width: 0;
+                            line-height: 50px;
+                            .title {
+                                font-size: 14px;
+                                color: #FFFFFF80;
+                                text-decoration: none;
+                            }
+                        }
+                        .media--center:hover {
+                            .title {
+                                color: #9b4de0;
+                                text-decoration: underline;
+                            }
+                        }
+                        .media--right {
+                            font-weight: 500;
+                            flex-basis: auto;
+                            flex-grow: 0;
+                            flex-shrink: 0;
+                            margin-left: 10px;
+                            font-size: 14px;
+                            color: #FFFFFF80;
+                        }
+                    }
+                }
+            }
+            .select--item:hover {
+                background-color: hsla(0,0%,100%,0.15);
+                border-radius: 5px;
             }
         }
     }
