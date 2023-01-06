@@ -39,7 +39,7 @@ function Categories(props) {
                   </div>
                   <div className="categories__playlists">
                      {categories?.map((category) => {
-                        return <Link to={url.getCategory(category.id, category.name)} ><CategoryItem key={category.id} {...category} /></Link>;
+                        return <Link key={category.id} to={url.getCategory(category.id, category.name)} ><CategoryItem {...category} /></Link>;
                      })}
                   </div>
                </>

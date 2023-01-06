@@ -1389,10 +1389,10 @@ html::-webkit-scrollbar {
    align-items: center;
 }
 
-.pause-music-mb,
-.pause-music {
-   display: none;
-}
+// .pause-music-mb,
+//       .pause-music {
+//    display: none;
+// }
 
 .pause-music ion-icon,
 .play-music ion-icon {
@@ -1428,6 +1428,9 @@ html::-webkit-scrollbar {
    background-color: var(--color-white);
    z-index: 1;
    border-radius: 20px;
+   .progressCurrent {
+      transition: none;
+   }
 }
 
 .time-begin,

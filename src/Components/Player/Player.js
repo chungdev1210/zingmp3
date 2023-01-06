@@ -1,12 +1,119 @@
-import React from "react";
+import React, { useRef, useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import IonIcon from "@reacticons/ionicons";
+import useTime from "../../Services/Hooks/useTime";
+
+let isMouseDown = false;
+let initialClientX = 0;
+let initialRate = 0;
 
 function Player(props) {
+   const [duration, setDuration] = useState();
+   const [isPlay, setPlay] = useState(false);
+   const [rateTimer, setRateTimer] = useState(0)
+   const progressRef = useRef();
+   const audioRef = useRef();
+   const { getMins } = useTime();
+
+   useEffect(() => {
+      if (duration > 0) {
+         document.addEventListener("mouseup", handleMouseUp);
+         document.addEventListener("mousemove", (e) => {
+            if (isMouseDown) {
+               document.body.style.userSelect = "none";
+               handleProgressDrag(e);
+            }
+         });
+      }
+   }, [duration]);
+
+   const handleClick = (e) => {
+      if (e.nativeEvent.which == 1) {
+         const rate = getProgressRate(e.nativeEvent.offsetX);
+         progressRef.current.children[0].style.width = `${rate}%`;
+         initialClientX = e.clientX;
+         initialRate = rate;
+
+         const currentTime = getCurrentTime(rate);
+         progressRef.current.previousElementSibling.children[0].innerText =
+            getMins(currentTime);
+      }
+      handleMouseDown();
+   };
+
+   const handleRightMenu = (e) => {
+      e.preventDefault();
+   };
+
+   const handleProgressDrag = (e) => {
+      const clientX = e.clientX;
+
+      const spaceRate = clientX - initialClientX;
+
+      const rateNew = getProgressRate(spaceRate);
+
+      let rate = initialRate + rateNew;
+
+      if (rate < 0) {
+         rate = 0;
+      }
+
+      if (rate > 100) {
+         rate = 100;
+      }
+      progressRef.current.children[0].style.width = `${rate}%`;
+
+      const currentTime = getCurrentTime(rate);
+      progressRef.current.previousElementSibling.children[0].innerText =
+         getMins(currentTime);
+   };
+
+   const getProgressRate = (positionX) => {
+      const rate = (positionX / progressRef.current.clientWidth) * 100;
+      return rate;
+   };
+
+   const handleMouseDown = () => {
+      isMouseDown = true;
+   };
+
+   const handleMouseUp = () => {
+      isMouseDown = false;
+
+      document.body.style.userSelect = "text";
+   };
+
+   const handleLoadAudio = () => {
+      const duration = audioRef.current.duration;
+      setDuration(duration);
+   };
+
+   const getCurrentTime = (rate) => {
+      const currentTime = (rate * duration) / 100;
+      return currentTime;
+   };
+
+   const handlePlay = () => {
+      const pauseStatus = audioRef.current.paused;
+      if (pauseStatus) {
+         audioRef.current.play();
+         setPlay(true);
+      } else {
+         audioRef.current.pause();
+         setPlay(false);
+      }
+   }
+
+   
+
    return (
       <div className="zing-controls">
          <div className="audio">
-            <audio src="./music/list-song/KARIK x ONLY C - CÓ CHƠI CÓ CHỊU (OFFICIAL MUSIC VIDEO).mp3" />
+            <audio
+               src="/Mp3/waitting-for-you.mp3"
+               onLoadedData={handleLoadAudio}
+               ref={audioRef}
+            />
          </div>
          <div className="l-4 m-3 c-9">
             <div className=" zing-control-left zing-control-left-action">
@@ -69,26 +176,29 @@ function Player(props) {
                      <i className="fa-solid fa-backward-step" />
                   </div>
                   <div className="play c-0">
-                     <div className="play-music control-icon action-hover  color-title">
-                        <ion-icon>
-                           <IonIcon
-                              name="play-outline"
-                              role="img"
-                              className="md hydrated"
-                              aria-label="play outline"
-                           />
-                        </ion-icon>
-                     </div>
-                     <div className="pause-music control-icon action-hover  color-title ">
-                        <ion-icon>
-                           <IonIcon
-                              name="pause-circle-outline"
-                              role="img"
-                              className="md hydrated"
-                              aria-label="pause circle outline"
-                           />
-                        </ion-icon>
-                     </div>
+                     {isPlay ? (
+                        <div className="pause-music control-icon action-hover color-title" onClick={handlePlay}>
+                           <ion-icon>
+                              <IonIcon
+                                 name="pause-circle-outline"
+                                 role="img"
+                                 className="md hydrated"
+                                 aria-label="pause circle outline"
+                              />
+                           </ion-icon>
+                        </div>
+                     ) : (
+                        <div className="play-music control-icon action-hover color-title" onClick={handlePlay}>
+                           <ion-icon>
+                              <IonIcon
+                                 name="play-outline"
+                                 role="img"
+                                 className="md hydrated"
+                                 aria-label="play outline"
+                              />
+                           </ion-icon>
+                        </div>
+                     )}
                   </div>
                   <div className="icon-control-right control-icon action-hover color-title ">
                      <i className="fa-solid fa-forward-step" />
@@ -99,16 +209,19 @@ function Player(props) {
                </div>
                <div className="control-handle-time c-0">
                   <div className="time-begin color-title">
-                     <span className="minute">00</span>:
-                     <span className="second">02</span>
+                     <span className="minute">00:00</span>
                   </div>
-                  <div className="progress">
-                     <div
-                        className="progressCurrent"
-                        style={{ width: "0.709279%" }}
-                     />
+                  <div
+                     onMouseDown={handleClick}
+                     onContextMenu={handleRightMenu}
+                     ref={progressRef}
+                     className="progress"
+                  >
+                     <div className="progressCurrent" style={{ width: "0%" }} />
                   </div>
-                  <div className="time-end color-title">04:46</div>
+                  <div className="time-end color-title">
+                     {getMins(duration)}
+                  </div>
                </div>
             </div>
          </div>
