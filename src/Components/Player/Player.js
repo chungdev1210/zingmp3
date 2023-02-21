@@ -2,55 +2,109 @@ import React, { useRef, useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import IonIcon from "@reacticons/ionicons";
 import useTime from "../../Services/Hooks/useTime";
+import { playerActions } from "./playerSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { playerSelector } from "./playerSlice";
+import clsx from "clsx";
+import Audio from "./Audio";
 
 let isMouseDown = false;
 let initialClientX = 0;
 let initialRate = 0;
+let currentTime = 0;
+let initialVolume = 50;
+
+const { doPlay, doActiveElement, doNext, doPrevious } = playerActions;
 
 function Player(props) {
-   const [duration, setDuration] = useState();
-   const [isPlay, setPlay] = useState(false);
-   const [rateTimer, setRateTimer] = useState(0)
    const progressRef = useRef();
+
    const audioRef = useRef();
+
+   const volumeRef = useRef();
+
    const { getMins } = useTime();
+
+   const dispatch = useDispatch();
+
+   const [duration, setDuration] = useState(0);
+
+   const { playStatus, elementActive, dataItemPlaying } =
+      useSelector(playerSelector);
 
    useEffect(() => {
       if (duration > 0) {
          document.addEventListener("mouseup", handleMouseUp);
+
          document.addEventListener("mousemove", (e) => {
             if (isMouseDown) {
-               document.body.style.userSelect = "none";
+               document.body.style.userSelect = "none"; //vô hiệu hóa chọn văn bản
+
                handleProgressDrag(e);
             }
          });
       }
    }, [duration]);
 
-   const handleClick = (e) => {
+   useEffect(() => {
+      document.addEventListener("keyup", (e) => {
+         if (e.code === "Space" && elementActive === "player") {
+            handlePlay();
+         }
+      });
+   }, [elementActive]);
+
+   useEffect(() => {
+      if (playStatus === "play") {
+         audioRef.current.play();
+      } 
+      if (playStatus === "pause") {
+         audioRef.current.pause();
+      }
+   }, [playStatus]);
+
+
+   useEffect(() => {
+      const volume = initialVolume / 100;
+
+      volumeRef.current.children[0].style.width = `${initialVolume}%`;
+
+      audioRef.current.setVolumeAudio(volume);
+   }, [initialVolume]);
+
+
+   const handleProgressTimer = (e) => {
+      //Chỉ cho phép bấm chuột trái
       if (e.nativeEvent.which == 1) {
          const rate = getProgressRate(e.nativeEvent.offsetX);
          progressRef.current.children[0].style.width = `${rate}%`;
+
+         handleMouseDown();
+
          initialClientX = e.clientX;
+
          initialRate = rate;
 
-         const currentTime = getCurrentTime(rate);
+         currentTime = getCurrentTime(rate);
+
          progressRef.current.previousElementSibling.children[0].innerText =
             getMins(currentTime);
       }
-      handleMouseDown();
    };
 
+
+   //vô hiệu hóa khi bấm chuột phải vào timer
    const handleRightMenu = (e) => {
       e.preventDefault();
    };
 
+
    const handleProgressDrag = (e) => {
-      const clientX = e.clientX;
+      const clientX = e.clientX; //Vị trí con trỏ chuột đang kéo so với góc bên trái của trang web
 
-      const spaceRate = clientX - initialClientX;
+      const spaceRate = clientX - initialClientX; //Khoảng cách kéo thêm (px)
 
-      const rateNew = getProgressRate(spaceRate);
+      const rateNew = getProgressRate(spaceRate); //Tỷ lệ phần trăm kéo thêm
 
       let rate = initialRate + rateNew;
 
@@ -61,106 +115,148 @@ function Player(props) {
       if (rate > 100) {
          rate = 100;
       }
-      progressRef.current.children[0].style.width = `${rate}%`;
 
-      const currentTime = getCurrentTime(rate);
+      progressRef.current.children[0].style.width = `${rate}%`;
+      currentTime = getCurrentTime(rate);
+
       progressRef.current.previousElementSibling.children[0].innerText =
          getMins(currentTime);
    };
+
 
    const getProgressRate = (positionX) => {
       const rate = (positionX / progressRef.current.clientWidth) * 100;
       return rate;
    };
 
+
+   const getVolumeRate = (positionX) => {
+      const rate = (positionX / volumeRef.current.clientWidth) * 100;
+      return rate;
+   };
+
+
    const handleMouseDown = () => {
       isMouseDown = true;
    };
 
-   const handleMouseUp = () => {
-      isMouseDown = false;
 
-      document.body.style.userSelect = "text";
+   const handleMouseUp = () => {
+      if (isMouseDown) {
+         isMouseDown = false;
+
+         document.body.style.userSelect = "text";
+
+         audioRef.current.setCurrentTime(currentTime);
+      }
    };
+
 
    const handleLoadAudio = () => {
-      const duration = audioRef.current.duration;
+      const duration = audioRef.current.getDuration();
       setDuration(duration);
    };
+
 
    const getCurrentTime = (rate) => {
       const currentTime = (rate * duration) / 100;
       return currentTime;
    };
 
+
    const handlePlay = () => {
-      const pauseStatus = audioRef.current.paused;
-      if (pauseStatus) {
+      if (audioRef.current.getPauseStatus()) {
          audioRef.current.play();
-         setPlay(true);
+         dispatch(doPlay("play"));
       } else {
          audioRef.current.pause();
-         setPlay(false);
+         dispatch(doPlay("pause"));
       }
+   };
+
+
+   const handleTimeUpdate = () => {
+      const currentTime = audioRef.current.getCurrentTime();
+      progressRef.current.previousElementSibling.children[0].innerText =
+         getMins(currentTime);
+
+      const rate = (currentTime / duration) * 100;
+
+      if (!isMouseDown) {
+         progressRef.current.children[0].style.width = `${rate}%`;
+      }
+   };
+
+
+   const handleClickPlayerArea = (e) => {
+      e.stopPropagation();
+      dispatch(doActiveElement("player"));
+   };
+
+
+   const handleProgressVolume = (e) => {
+      if (e.nativeEvent.which == 1) {
+         const volumeRate = getVolumeRate(e.nativeEvent.offsetX);
+         initialVolume = volumeRate;
+
+         volumeRef.current.children[0].style.width = `${volumeRate}%`;
+
+         audioRef.current.setVolumeAudio(volumeRate / 100);
+      }
+   };
+
+
+   const handleEndAudio = () => {
+      progressRef.current.previousElementSibling.children[0].innerText =
+         "00:00";
+      dispatch(doPlay("pause"));
+      progressRef.current.children[0].style.width = "0%";
+      dispatch(doNext(true))
+   };
+
+
+   const handeNext = (e) => {
+      e.preventDefault();
+      dispatch(doNext(true))
    }
 
-   
+   const handePrevious = (e) => {
+      e.preventDefault();
+      dispatch(doPrevious(true))
+   }
+
 
    return (
-      <div className="zing-controls">
-         <div className="audio">
-            <audio
-               src="/Mp3/waitting-for-you.mp3"
-               onLoadedData={handleLoadAudio}
-               ref={audioRef}
-            />
-         </div>
+      <div className="zing-controls" onClick={handleClickPlayerArea}>
+         <Audio
+            onLoadedData={handleLoadAudio}
+            onTimeUpdate={handleTimeUpdate}
+            onEnded={handleEndAudio}
+            ref={audioRef}
+         />
+
          <div className="l-4 m-3 c-9">
             <div className=" zing-control-left zing-control-left-action">
                <div className="control-left-img " style={{ marginLeft: 0 }}>
-                  <img
-                     src="https://vtv1.mediacdn.vn/thumb_w/640/2022/9/21/poster-karik-only-c-16637279213761078057270.jpeg"
-                     alt=""
-                  />
+                  <img src={dataItemPlaying.image} alt="" />
                </div>
                <div className="control-left-title">
-                  <h1 className="color-title">CÓ CHƠI CÓ CHỊU</h1>
-                  <small className="color-small">KARIK x ONLY C</small>
-               </div>
-               <div
-                  className="icon-favorite color-small "
-                  data-index="${index}"
-               >
-                  <div className="no-favorite zingchart-icon icon-tym action-hover">
-                     <ion-icon>
-                        <IonIcon
-                           name="heart-outline"
-                           role="img"
-                           className="md hydrated"
-                           aria-label="heart outline"
-                        />
-                     </ion-icon>
-                  </div>
-                  <div className="yes-favorite zingchart-icon icon-tym action-hover">
-                     <ion-icon>
-                        <IonIcon
-                           name="heart"
-                           role="img"
-                           className="md hydrated"
-                           aria-label="heart"
-                        />
-                     </ion-icon>
-                  </div>
+                  <h1 className="color-title">{dataItemPlaying.name}</h1>
+                  <small className="color-small">
+                     {dataItemPlaying.singer?.map(({ id, name }) => {
+                        return <a href="#" key={id}>{name} </a>;
+                     })}
+                  </small>
                </div>
                <div className="control-left-icon m-0">
-                  <div className="item icon action-hover  color-title m-0 ">
+                  <div className="item icon color-title m-0">
                      <ion-icon>
-                        <IonIcon
-                           name="ellipsis-horizontal-outline"
-                           role="img"
-                           className="md hydrated"
-                           aria-label="ellipsis horizontal outline"
-                        />
+                        <IonIcon name="heart-outline" />
+                     </ion-icon>
+                  </div>
+                  <div className="item icon action-hover color-title m-0">
+                     <ion-icon>
+                        <IonIcon name="ellipsis-horizontal-outline" />
                      </ion-icon>
                   </div>
                </div>
@@ -172,35 +268,26 @@ function Player(props) {
                   <div className="repeat control-icon action-hover color-title action-controls">
                      <i className="fa-solid fa-repeat" />
                   </div>
-                  <div className="icon-control-left control-icon action-hover  color-title c-0">
+                  <div className="icon-control-left control-icon action-hover  color-title c-0" onClick={handePrevious}>
                      <i className="fa-solid fa-backward-step" />
                   </div>
                   <div className="play c-0">
-                     {isPlay ? (
-                        <div className="pause-music control-icon action-hover color-title" onClick={handlePlay}>
-                           <ion-icon>
-                              <IonIcon
-                                 name="pause-circle-outline"
-                                 role="img"
-                                 className="md hydrated"
-                                 aria-label="pause circle outline"
-                              />
-                           </ion-icon>
-                        </div>
-                     ) : (
-                        <div className="play-music control-icon action-hover color-title" onClick={handlePlay}>
-                           <ion-icon>
-                              <IonIcon
-                                 name="play-outline"
-                                 role="img"
-                                 className="md hydrated"
-                                 aria-label="play outline"
-                              />
-                           </ion-icon>
-                        </div>
-                     )}
+                     <div
+                        className="play-music action-hover color-title"
+                        onClick={handlePlay}
+                     >
+                        <ion-icon>
+                           <IonIcon
+                              name={clsx(
+                                 playStatus === "play"
+                                    ? "pause-circle-outline"
+                                    : "play-outline"
+                              )}
+                           />
+                        </ion-icon>
+                     </div>
                   </div>
-                  <div className="icon-control-right control-icon action-hover color-title ">
+                  <div className="icon-control-right control-icon action-hover color-title " onClick={handeNext}>
                      <i className="fa-solid fa-forward-step" />
                   </div>
                   <div className="icon-shuffle control-icon action-hover color-title c-0 action-controls">
@@ -212,10 +299,10 @@ function Player(props) {
                      <span className="minute">00:00</span>
                   </div>
                   <div
-                     onMouseDown={handleClick}
+                     className="progress"
+                     onMouseDown={handleProgressTimer}
                      onContextMenu={handleRightMenu}
                      ref={progressRef}
-                     className="progress"
                   >
                      <div className="progressCurrent" style={{ width: "0%" }} />
                   </div>
@@ -240,7 +327,12 @@ function Player(props) {
                   <div className="volume-pause control-icon action-hover  color-title hide">
                      <i className="fa-solid fa-volume-xmark" />
                   </div>
-                  <div className="volume-control color-title">
+                  <div
+                     className="volume-control color-title"
+                     ref={volumeRef}
+                     onMouseDown={handleProgressVolume}
+                     onContextMenu={handleRightMenu}
+                  >
                      <div className="volume-control-play" />
                   </div>
                </div>

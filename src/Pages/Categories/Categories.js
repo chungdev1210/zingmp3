@@ -3,12 +3,9 @@ import PropTypes from "prop-types";
 import "./Category.scss";
 import useClient from "../../Services/Hooks/useClient";
 import CategoryItem from "./CategoryItem";
-import { Link } from "react-router-dom";
-import useUrl from "../../Services/Hooks/useUrl"
 
 function Categories(props) {
    const client = useClient();
-   const url = useUrl();
    const [categories, setCategories] = useState([]);
    const [isLoading, setLoading] = useState(true);
 
@@ -39,7 +36,11 @@ function Categories(props) {
                   </div>
                   <div className="categories__playlists">
                      {categories?.map((category) => {
-                        return <Link key={category.id} to={url.getCategory(category.id, category.name)} ><CategoryItem {...category} /></Link>;
+                        return (
+                           <div className="playlists--item" key={category.id}>
+                              <CategoryItem {...category} />
+                           </div>
+                        );
                      })}
                   </div>
                </>

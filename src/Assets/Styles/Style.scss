@@ -1,15 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 * {
    margin: 0;
    padding: 0;
    box-sizing: border-box;
-   transition: all linear 0.3s;
+   // transition: all linear 0.3s;
    outline: none;
 }
 
 html {
-   font-family: Inter,sans-serif;
+   font-family: Inter, sans-serif;
    font-size: 16px;
    -ms-overflow-style: none;
    /* khai báo sử dụng Internet Explorer, Edge */
@@ -32,7 +32,7 @@ html::-webkit-scrollbar {
    --background-btn: rgba(0, 0, 0, 0.4);
    --primary-bg: #432275;
    --color-small: rgba(225, 225, 225, 0.5);
-   --color-pink: #f12d94;
+   --color-pink: #c273ed;
    --background-music2: #5a1eae;
    --background-music1: rgba(225, 225, 225, 0.1);
    --height-footer: 60px;
@@ -73,7 +73,7 @@ html::-webkit-scrollbar {
 }
 
 .zing-logo-pc img {
-   margin: 10px 20px;
+   margin: 20px 0 5px 30px;
    width: auto;
    height: 35px;
    display: inline-block;
@@ -83,6 +83,9 @@ html::-webkit-scrollbar {
    position: relative;
    margin-top: 10px;
    padding-bottom: 24px;
+   a {
+      text-decoration: none;
+   }
 }
 
 .sidebar-divide {
@@ -95,27 +98,24 @@ html::-webkit-scrollbar {
    margin-left: 22px;
 }
 
-.zing-navbar-item {
-   padding: 10px 25px;
-   cursor: pointer;
-}
-
 .zing-navbar-item a {
+   padding: 10px 25px;
    display: flex;
    align-items: center;
    font-weight: 600;
+   color: #fff;
 }
 
 .zing-navbar-item a h1 {
    font-size: 14px;
 }
 
-.action-song {
+.zing-navbar-item a.active {
    background-color: rgba(225, 225, 225, 0.1);
 }
 
-.zing-navbar-item.action-song {
-   border-left: 3px solid var(--color-pink);
+.zing-navbar-item a.active {
+   border-left: 3px solid #9b4de0;
 }
 
 .zing-navbar-item a i,
@@ -127,6 +127,17 @@ html::-webkit-scrollbar {
 .zingchart,
 .radio {
    position: relative;
+}
+
+.zing-navbar-item .live {
+   position: absolute;
+   bottom: 15px;
+   padding: 3px 7px;
+   font-size: 9px;
+   background-color: rgb(254, 23, 23);
+   border-radius: 4px;
+   margin-left: 6px;
+   left: 95px;
 }
 
 .zingchart-play,
@@ -146,7 +157,7 @@ html::-webkit-scrollbar {
    display: block;
 }
 
-.zing-navbar-item .tilte+span {
+.zing-navbar-item .tilte + span {
    position: absolute;
    bottom: 12px;
    padding: 3px 6px;
@@ -265,18 +276,18 @@ html::-webkit-scrollbar {
       background: bisque;
       padding: 10px;
       text-align: left;
-  
+
       p {
-        margin-bottom: 10px;
+         margin-bottom: 10px;
       }
       li {
-        margin-bottom: 10px;
-        a {
-          color: #333;
-          text-decoration: none;
-        }
+         margin-bottom: 10px;
+         a {
+            color: #333;
+            text-decoration: none;
+         }
       }
-    }
+   }
 }
 
 .zing-left {
@@ -313,7 +324,8 @@ html::-webkit-scrollbar {
    height: auto;
    overflow: hidden;
    padding: 20px 10px;
-   background: url("../Images/Themes/modalThemes/modalTheme3/theme2.jpg") center/cover no-repeat;
+   background: url("../Images/Themes/modalThemes/modalTheme3/theme2.jpg")
+      center/cover no-repeat;
    border-radius: 0 0 20px 20px;
 }
 
@@ -453,7 +465,8 @@ html::-webkit-scrollbar {
    width: 230px;
    padding: 10px 0;
    border-radius: 10px;
-   background: url("../Images/Themes/modalThemes/modalTheme3/theme2.jpg") center/cover no-repeat;
+   background: url("../Images/Themes/modalThemes/modalTheme3/theme2.jpg")
+      center/cover no-repeat;
 }
 
 .setting-item {
@@ -545,6 +558,8 @@ html::-webkit-scrollbar {
    text-transform: uppercase;
    margin: 3px;
    font-size: 12px;
+   text-decoration: none;
+   color: #fff;
 }
 
 .item ion-icon {
@@ -641,9 +656,10 @@ html::-webkit-scrollbar {
 
 /* ---------------------- */
 .individual-ctn2 {
-   display: flex;
-   width: 100%;
-   height: 100%;
+   // display: flex;
+   // width: 100%;
+   // height: 100%;
+   padding: 0 40px;
 }
 
 .individual-ctn2-left {
@@ -703,8 +719,8 @@ html::-webkit-scrollbar {
 
 .individual-ctn2-song-item-img {
    position: relative;
-   width: 40px;
-   height: 40px;
+   width: 52px;
+   height: 52px;
    border-radius: 4px;
    overflow: hidden;
    cursor: pointer;
@@ -714,6 +730,7 @@ html::-webkit-scrollbar {
    width: 100%;
    height: 100%;
    object-fit: cover;
+   position: relative;
 }
 
 .icon-play-song,
@@ -724,21 +741,30 @@ html::-webkit-scrollbar {
    top: 0;
    background-color: var(--background-btn);
    text-align: center;
-   line-height: 46px;
-   font-size: 20px;
-   display: none;
+   line-height: 52px;
+   font-size: 25px;
    color: var(--color-white);
+   display: none;
+   cursor: pointer;
+}
+
+.individual-ctn2-song-item-icon {
+   font-size: 18px !important;
 }
 
 .action-pause-music .individual-ctn2-song-item-icon {
    display: block;
 }
 
-.song-item-right.music-color-playlist:hover .action-play-music .individual-ctn2-song-item-icon {
+.song-item-right.music-color-playlist:hover
+   .action-play-music
+   .individual-ctn2-song-item-icon {
    display: none;
 }
 
-.zingchart-body-item.music-color:hover .action-play-music .individual-ctn2-song-item-icon {
+.zingchart-body-item.music-color:hover
+   .action-play-music
+   .individual-ctn2-song-item-icon {
    display: none;
 }
 
@@ -774,8 +800,7 @@ html::-webkit-scrollbar {
 .individual-ctn2-right {
    height: 24vw;
    width: 100%;
-   padding-left: 50px;
-   padding-right: 150px;
+   padding: 0 40px;
    -ms-overflow-style: none;
    scrollbar-width: none;
    overflow-y: scroll;
@@ -814,6 +839,26 @@ html::-webkit-scrollbar {
    display: flex;
 }
 
+.song-item.individual-ctn2-song-item {
+   border-bottom: 0.1px solid hsla(0, 0%, 100%, 0.05);
+}
+
+.song-item.active-item {
+   background-color: var(--background-while);
+   .individual-ctn2-song-item-img {
+      position: relative;
+      .individual-ctn2-song-item-icon {
+         display: block;
+         .icon-play  {
+            display: none;
+         }
+      }
+      .icon-play-song {
+         display: block;
+      }
+   }
+}
+
 .song-item:hover {
    background-color: var(--background-while);
 }
@@ -831,7 +876,9 @@ html::-webkit-scrollbar {
    margin-right: 10px;
 }
 
-.individual-ctn2-song-item:hover .action-play-music .individual-ctn2-song-item-icon {
+.individual-ctn2-song-item:hover
+   .action-play-music
+   .individual-ctn2-song-item-icon {
    display: none;
 }
 
@@ -858,7 +905,6 @@ html::-webkit-scrollbar {
 .individual-ctn2-song-title span,
 .individual-ctn2-song-title small {
    display: flex;
-   font-size: 12px;
    display: -webkit-box;
    -webkit-box-orient: vertical;
    -webkit-line-clamp: 1;
@@ -868,13 +914,18 @@ html::-webkit-scrollbar {
    text-transform: capitalize;
 }
 
+.individual-ctn2-song-title span {
+   margin-bottom: 6px;
+   font-size: 14px;
+}
+
 .individual-ctn2-song-title small {
-   margin-top: 3px;
+   font-size: 12px;
 }
 
 .icon-video,
-.icon {
-   margin: 0 10px;
+.icon-heart {
+   margin: 0 12px;
    font-size: 20px;
    width: 35px;
    height: 35px;
@@ -882,15 +933,11 @@ html::-webkit-scrollbar {
    text-align: center;
 }
 
-.icon-video {
-   width: auto;
-}
-
 .icon-video ion-icon,
 .icon ion-icon,
 .icon i {
    height: 35px;
-   line-height: 35px;
+   line-height: 40px;
    cursor: pointer;
 }
 
@@ -916,7 +963,8 @@ html::-webkit-scrollbar {
 }
 
 .song-time {
-   font-size: 14px;
+   font-size: 13px;
+   color: var(--color-small);
    line-height: 35px;
 }
 
@@ -924,6 +972,15 @@ html::-webkit-scrollbar {
    font-size: 20px;
    opacity: 0;
    transition: 0.3s linear;
+}
+
+.icon-heart {
+   font-size: 20px;
+   opacity: 1;
+   line-height: 40px;
+   ion-icon {
+      color: #9b4de0;
+   }
 }
 
 .icon-favorite {
@@ -939,6 +996,11 @@ html::-webkit-scrollbar {
    transform: translateX(10px);
 }
 
+// .individual-ctn2-song-item:hover .icon-heart {
+//    opacity: 1;
+//    // transform: translateX(10px);
+// }
+
 .individual-ctn2-song-item:hover .song-time {
    display: none;
 }
@@ -951,11 +1013,18 @@ html::-webkit-scrollbar {
 .individual-ctn2-song-item:hover .time ion-icon {
    display: flex;
    height: 100%;
+   align-items: center;
+   justify-content: center;
+   margin-right: 12px;
 }
 
 /* --------------- */
 .icon-play-song img {
    width: 20px;
+}
+
+.icon-play-song ion-icon {
+   line-height: 66px;
 }
 
 .action-song .icon-play-song {
@@ -978,6 +1047,7 @@ html::-webkit-scrollbar {
 
 .individual-ctn3 {
    padding: 0 40px;
+   margin-bottom: 100px;
 }
 
 .individual-ctn3-item-add,
@@ -1246,7 +1316,7 @@ html::-webkit-scrollbar {
 
 .individual-ctn5-hover:hover .modal-icon-play {
    display: flex;
-   color: #fc427b;
+   color: #c273ed;
    background: none;
 }
 
@@ -1337,8 +1407,15 @@ html::-webkit-scrollbar {
 
 .control-left-icon {
    display: flex;
-   align-items: center;
-   margin-left: 10px;
+   .item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: 10px;
+   }
+   .icon {
+      font-size: 20px;
+   }
 }
 
 .control-icon {
@@ -1362,14 +1439,14 @@ html::-webkit-scrollbar {
    height: 45px;
 }
 
-.play-music:hover,
-.pause-music:hover {
-   color: #fd79a8;
-}
+// .play-music:hover,
+// .pause-music:hover {
+//    color: #c273ed;
+// }
 
-.control-icon.action-hover:hover {
-   background-color: rgba(0, 0, 0, 0.1);
-}
+// .control-icon.action-hover:hover {
+//    background-color: rgba(0, 0, 0, 0.1);
+// }
 
 .control-icon:hover {
    background-color: var(--background-while);
@@ -1393,7 +1470,11 @@ html::-webkit-scrollbar {
 //       .pause-music {
 //    display: none;
 // }
-
+.play-music {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
 .pause-music ion-icon,
 .play-music ion-icon {
    font-size: 30px;
@@ -1499,10 +1580,11 @@ html::-webkit-scrollbar {
 
 .volume-control-play {
    position: relative;
-   width: 100%;
+   width: 0%;
    height: 100%;
    background-color: #b567d9;
    border-radius: 20px;
+   transition: none !important;
 }
 
 .volume-control-play::after {
@@ -1547,7 +1629,6 @@ html::-webkit-scrollbar {
 
 .icon:hover {
    background-color: var(--background-while);
-   
 }
 
 .list-song {
@@ -1595,7 +1676,8 @@ html::-webkit-scrollbar {
    padding-bottom: 20px;
    border-radius: 10px;
    overflow: hidden;
-   background: url(../Images/Themes/modalThemes/modalTheme3/theme2.jpg) center/cover no-repeat;
+   background: url(../Images/Themes/modalThemes/modalTheme3/theme2.jpg)
+      center/cover no-repeat;
 }
 
 .topic-header {
@@ -1729,9 +1811,11 @@ html::-webkit-scrollbar {
    top: 0;
    height: 100%;
    width: 25%;
-   background: linear-gradient(0,
+   background: linear-gradient(
+         0,
          rgba(225, 225, 225, 0.05),
-         rgba(225, 225, 225, 0.1)),
+         rgba(225, 225, 225, 0.1)
+      ),
       url(../Images/Themes/backroundThemes/2.jpg) no-repeat center/cover;
    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
    z-index: 200;
@@ -1843,12 +1927,12 @@ html::-webkit-scrollbar {
 /* -------------- check box ------------------- */
 
 .checkbox-wrapper {
-   display: none;
+   display: block;
    align-items: center;
    margin-right: 5px;
 }
 
-.zing-body-selector-bgr {
+.active {
    background-color: rgba(225, 225, 225, 0.3);
 }
 
@@ -2090,10 +2174,11 @@ html::-webkit-scrollbar {
 
 /* -------------------------- */
 .the-song {
-   padding: 0 10px;
+   padding: 0 10px 4px 10px;
 }
 
 .the-song-include {
+   position: relative;
    display: flex;
    width: 100%;
    height: 100%;
@@ -2104,14 +2189,33 @@ html::-webkit-scrollbar {
    justify-content: space-between;
 }
 
+.the-song-include.active-item {
+   background: rgba(225, 225, 225, 0.05);
+   .icon-play-song {
+      display: block;
+      position: absolute;
+      right: 0;
+      left: 0;
+      top: 0;
+      border-radius: 3px;
+      background-color: var(--background-modal);
+   }
+}
+
+.the-song-include.active-item:hover {
+   .the-song-icon-play {
+      display: none;
+   }
+}
+
 .the-song-include-img {
-   width: 60px;
-   height: 60px;
+   width: 65px;
+   height: 65px;
 }
 
 .the-song-img {
-   width: 60px;
-   height: 60px;
+   width: 65px;
+   height: 65px;
    border-radius: 4px;
 }
 
@@ -2129,6 +2233,7 @@ html::-webkit-scrollbar {
    -webkit-line-clamp: 1;
    cursor: pointer;
    overflow: hidden;
+   color: #fff;
 }
 
 .the-song-include-left {
@@ -2141,9 +2246,10 @@ html::-webkit-scrollbar {
 }
 
 .the-song-info .singer {
-   font-size: 14px;
+   font-size: 13px;
+   color: #ffffff80;
    display: block;
-   margin-top: 1px;
+   margin: 8px 0 3px 0;
    display: -webkit-box;
    -webkit-box-orient: vertical;
    -webkit-line-clamp: 1;
@@ -2152,11 +2258,13 @@ html::-webkit-scrollbar {
 }
 
 .the-song-info .time {
+   color: #ffffff80;
    font-size: 12px;
+   float: left;
 }
 
-.the-song .icon {
-   display: flex;
+.the-song .item {
+   display: grid;
    justify-content: center;
    display: none;
 }
@@ -2173,7 +2281,7 @@ html::-webkit-scrollbar {
    height: 100%;
    text-align: center;
    color: white;
-   font-size: 20px;
+   font-size: 25px;
    line-height: 100%;
    background-color: var(--background-modal);
    display: none;
@@ -2185,10 +2293,11 @@ html::-webkit-scrollbar {
 
 .the-song-icon-play ion-icon {
    height: 100%;
+   line-height: 66px;
 }
 
 .the-song-include:hover .icon {
-   display: block;
+   display: flex;
 }
 
 .the-song-include:hover {
@@ -2204,8 +2313,9 @@ html::-webkit-scrollbar {
 }
 
 .discover-ctn3-header {
-   font-size: 20px;
+   font-size: 21px;
    margin: 10px 0;
+   font-weight: 700;
 }
 
 .discover-ctn3-body {
@@ -2239,9 +2349,9 @@ html::-webkit-scrollbar {
    display: block;
 }
 
-.discover-ctn6-img:hover {
-   border: 4px solid #fd79a8;
-}
+// .discover-ctn6-img:hover {
+//    border: 4px solid #fd79a8;
+// }
 
 .discover-ctn6-img-small {
    position: absolute;
@@ -2364,10 +2474,11 @@ html::-webkit-scrollbar {
    width: auto;
    height: 100%;
    margin: 0 -13px;
+   padding: 0 30px;
 }
 
 .discover-ctn5-singer-img {
-   padding: 0 10px;
+   padding: 0 30px;
 }
 
 .discover-ctn5-singer-img img {
@@ -2454,6 +2565,7 @@ html::-webkit-scrollbar {
 
 .zingchartCtn {
    padding: 60px;
+   margin-bottom: 20px;
 }
 
 .zingchart-header {
@@ -2494,7 +2606,7 @@ html::-webkit-scrollbar {
 }
 
 .zingchart-height.zingchart-body-list-height {
-   height: 607px;
+   max-height: 607px;
    overflow: hidden;
 }
 
@@ -2539,11 +2651,16 @@ html::-webkit-scrollbar {
    align-items: center;
    width: 350px;
 }
-
+.zing-playList-right-body {
+   .zingchart-body-main {
+      padding-left: 25px;
+   }
+}
 .zingchart-body-main {
    display: flex;
    align-items: center;
    flex: 1;
+   color: #fff;
 }
 
 .zingchart-body-main .title {
@@ -2566,6 +2683,7 @@ html::-webkit-scrollbar {
 .zingchart-body-right {
    display: flex;
    align-items: center;
+   margin-left: auto;
 }
 
 .zingchart-body-right-icon {
@@ -2686,7 +2804,7 @@ html::-webkit-scrollbar {
 
 .individual-ctn2-song-title.zingchart-footer-title span,
 .individual-ctn2-song-title.zingchart-footer-title small {
-   width: 100px;
+   width: 100%;
    display: -webkit-box;
    -webkit-box-orient: vertical;
    -webkit-line-clamp: 1;
@@ -2715,11 +2833,11 @@ html::-webkit-scrollbar {
 
 .zingchart-footer-item:hover .zingchart-footer-title span,
 .zingchart-footer-item:hover .zingchart-footer-title small {
-   width: 70px;
+   width: 100%;
 }
 
 .zingchart-footer-item:hover .zingchart-footer--body-left {
-   width: 125px;
+   width: 200px;
 }
 
 .vip .discover-ctn2-info img {
@@ -2734,6 +2852,7 @@ html::-webkit-scrollbar {
    padding: 40px 60px;
    display: flex;
    width: 100%;
+   margin-bottom: 40px;
 }
 
 .zing-playList-left {
@@ -2814,8 +2933,11 @@ html::-webkit-scrollbar {
    transform: scale(1.1);
 }
 
-.zing-playlist-icon-pause ion-icon {
-   font-size: 40px;
+.zing-playlist-icon-pause i {
+   position: absolute;
+   top: 48%;
+   left: 48%;
+   font-size: 35px;
    height: 300px;
 }
 
@@ -2889,7 +3011,6 @@ html::-webkit-scrollbar {
 
 .zing-playList-right {
    padding-left: 30px;
-   height: 470px;
    padding-top: 10px;
    overflow: hidden;
    -ms-overflow-style: none;
@@ -2910,7 +3031,6 @@ html::-webkit-scrollbar {
 
 .zing-playList-right-header span {
    font-size: 12px;
-   margin-left: 30px;
    text-transform: uppercase;
 }
 
@@ -2929,7 +3049,7 @@ html::-webkit-scrollbar {
 }
 
 .zing-playList-favorate i,
-.zing-playList-selecton ion-icon {
+.zing-playList-selection i {
    font-size: 20px;
    margin: 0 6px;
    padding: 8px;
@@ -2959,7 +3079,7 @@ html::-webkit-scrollbar {
    display: flex;
 }
 
-.zing-playList-item:hover .checkbox-wrapper ion-icon {
+.zing-playList-item:hover .checkbox-wrapper i {
    display: none;
 }
 
@@ -2967,8 +3087,11 @@ html::-webkit-scrollbar {
    display: none;
 }
 
+.zing-playlist-btn-play,
 .zing-playlist-btn-pause {
-   display: none;
+   i {
+      margin-right: 6px;
+   }
 }
 
 .action-playlist-btn .zing-playlist-btn-play {
@@ -2981,9 +3104,9 @@ html::-webkit-scrollbar {
 
 /* ============ radio ============ */
 
-.RadioCtn {
+.radioCtn {
    padding: 50px;
-   padding-bottom: 0;
+   margin-bottom: 20px;
 }
 
 .RadioCtn-ctn1 {
@@ -2992,8 +3115,10 @@ html::-webkit-scrollbar {
 
 .RadioCtn-ctn1-body {
    display: flex;
-   margin: 0 -10px;
+   // margin: 0 -10px;
    transition: 0.6s linear;
+   padding: 0 40px;
+   overflow: hidden;
 }
 
 .RadioCtn-ctn1 .body {
@@ -3029,7 +3154,7 @@ html::-webkit-scrollbar {
 
 .RadioCtn-ctn2-left {
    width: 100%;
-   height: 100%;
+   // height: 100%;
    text-align: center;
 }
 
@@ -3107,6 +3232,7 @@ html::-webkit-scrollbar {
 
 .RadioCtn-ctn2-right .programs .item .title {
    font-size: 12px;
+   text-transform: uppercase;
 }
 
 .RadioCtn-ctn2-right .programs .item .content .time {
@@ -3133,6 +3259,7 @@ html::-webkit-scrollbar {
 .RadioCtn-ctn2-right .icon-right {
    background-color: rgba(225, 225, 225, 0.15);
    right: 10px;
+   // color: #fff !important;
 }
 
 .RadioCtn-ctn2-right .total {
@@ -3363,7 +3490,17 @@ html::-webkit-scrollbar {
 }
 
 .color-small {
-   color: var(--color-small);
+   color: #fff;
+   a,
+   .title,
+   .singer {
+      color: var(--color-small);
+      text-decoration: none;
+   }
+   a:hover {
+      color: #c273ed;
+      text-decoration: underline;
+   }
 }
 
 .color-title {
@@ -3380,7 +3517,8 @@ html::-webkit-scrollbar {
 
 .action-search.zing-search {
    border-radius: 20px 20px 0 0;
-   background: url("../Images/Themes/modalThemes/modalTheme3/theme2.jpg") center/cover no-repeat;
+   background: url("../Images/Themes/modalThemes/modalTheme3/theme2.jpg")
+      center/cover no-repeat;
 }
 
 li {

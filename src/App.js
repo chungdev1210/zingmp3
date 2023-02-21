@@ -5,6 +5,7 @@ import "./Assets/Styles/Grid.scss";
 import "./Assets/Styles/Responsive.scss";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
+
 export default function App() {
   return <Main />;
 }

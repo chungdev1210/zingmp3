@@ -1,11 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 import IonIcon from "@reacticons/ionicons";
-import Personal from "./Components/Personal/Personal";
+import Explore from "../Explore/Explore";
+
 
 function Home(props) {
   return (
-    <Personal />
+    <Explore />
   );
 }
 

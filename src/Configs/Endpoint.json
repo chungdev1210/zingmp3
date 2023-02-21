@@ -5,5 +5,7 @@
     "login": "/login",
     "users": "/640/users",
     "register": "/register",
-    "categories": "/categories"
+    "categories": "/categories",
+    "lists": "/lists",
+    "playLists": "/playLists"
 }

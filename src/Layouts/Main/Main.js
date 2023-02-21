@@ -1,21 +1,29 @@
-import React from "react";
+import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import Header from "../Header/Header";
 import RouteCore from "../../Services/Routes/RouteCore";
 import Sidebar from "../Sidebar/Sidebar";
-import { useDispatch } from "react-redux";
-import { getUser } from "../../Pages/Auth/authSlice";
-import { useEffect } from "react";
 import Player from "../../Components/Player/Player";
+import {
+   playerActions,
+   playerSelector,
+} from "../../Components/Player/playerSlice";
+import { useDispatch, useSelector } from "react-redux";
+
+const { doActiveElement } = playerActions;
 
 function Main(props) {
    const dispatch = useDispatch();
-   useEffect(() => {
-      dispatch(getUser());
-   }, []);
-   
+   const { elementActive } = useSelector(playerSelector);
+
+   const handleActiveElement = () => {
+      if (elementActive === "player") {
+         dispatch(doActiveElement("body"));
+      }
+   };
+
    return (
-      <div id="app">
+      <div id="app" onClick={handleActiveElement}>
          <div className="background"></div>
          <div className="grid">
             <div className="zing">

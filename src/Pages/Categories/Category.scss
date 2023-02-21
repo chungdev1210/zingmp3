@@ -1,5 +1,5 @@
 .categories {
-    height: 1000px;
+    margin-bottom: 60px;
     .categories__banner {
         img {
             width: 100%;
@@ -10,11 +10,11 @@
         padding-top: 20px;
         display: flex;
         flex-wrap: wrap;
-        a {
+        .playlists--item {
             width: calc( 100% / 4);
+            margin-bottom: 20px;
         }
         .playlist__item {
-            margin-bottom: 20px;
             padding: 0 15px;
             position: relative;
             .playlist__item-img {
@@ -74,7 +74,7 @@
 }
 
 .category__detail {
-    height: 1000px;
+    margin-bottom: 40px;
     .category__detail--banner {
         img {
             width: 100%;
@@ -84,13 +84,10 @@
         padding: 20px;
         display: flex;
         flex-wrap: wrap;
-        .tag_link {
+        .category__detail--item {
             width: calc( 100% / 5 );
             padding: 0 15px;
             margin-bottom: 30px;
-            text-decoration: none;
-        }
-        .category__detail--item {
             .category__detail--item_img {
                 position: relative;
                 overflow: hidden;

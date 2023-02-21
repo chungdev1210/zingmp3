@@ -50,9 +50,9 @@ function Login(props) {
 
          toast.success("Đăng nhập thành công");
 
-         setTimeout( () => {
-            navigate('/ca-nhan')
-         }, 800)
+         setTimeout(() => {
+            navigate("/ca-nhan");
+         }, 800);
       } else {
          toast.error("Email hoặc mật khẩu không chính xác");
       }
