@@ -72,6 +72,10 @@ html::-webkit-scrollbar {
    z-index: -1;
 }
 
+.hide {
+   display: none !important;
+}
+
 .zing-logo-pc img {
    margin: 20px 0 5px 30px;
    width: auto;
@@ -828,7 +832,14 @@ html::-webkit-scrollbar {
 }
 
 .individual-ctn2-song-right .time {
-   width: 37px;
+   width: 45px;
+   height: 35px;
+   margin-left: 12px;
+   ion-icon:hover {
+      background-color: hsla(0,0%,100%,0.1);
+      border-radius: 100%;
+   }
+
 }
 
 .song-item.action-hover:hover {
@@ -971,15 +982,21 @@ html::-webkit-scrollbar {
 .icon-video {
    font-size: 20px;
    opacity: 0;
-   transition: 0.3s linear;
 }
 
 .icon-heart {
    font-size: 20px;
    opacity: 1;
    line-height: 40px;
-   ion-icon {
-      color: #9b4de0;
+   display: none;
+}
+
+.individual-ctn2-song-list {
+   .icon-heart {
+      display: block;
+      ion-icon {
+         color: #9b4de0;
+      }
    }
 }
 
@@ -993,7 +1010,6 @@ html::-webkit-scrollbar {
 
 .individual-ctn2-song-item:hover .icon-video {
    opacity: 1;
-   transform: translateX(10px);
 }
 
 // .individual-ctn2-song-item:hover .icon-heart {
@@ -1003,6 +1019,10 @@ html::-webkit-scrollbar {
 
 .individual-ctn2-song-item:hover .song-time {
    display: none;
+}
+
+.individual-ctn2-song-item:hover .icon-heart {
+   display: block;
 }
 
 .individual-ctn2-song-item .time ion-icon {
@@ -1337,9 +1357,9 @@ html::-webkit-scrollbar {
    z-index: 300;
    align-items: center;
    cursor: pointer;
-   background: linear-gradient(0, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
-      url("../Images/Themes/backroundThemes/2.jpg") no-repeat center/cover;
+   background: #130c1c;
    animation: controls 0.4s linear;
+   border-top: 1px solid hsla(0,0%,100%,0.1);
 }
 
 @keyframes controls {
@@ -2954,11 +2974,14 @@ html::-webkit-scrollbar {
    justify-content: center;
    align-items: center;
    display: none;
+   i {
+      font-size: 30px;
+   }
 }
 
 .zing-playlist-icon-play img {
-   width: 40px;
-   height: 40px;
+   width: 30px;
+   height: 30px;
 }
 
 .action-play-music .zing-playlist-icon-play {

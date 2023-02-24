@@ -29,7 +29,7 @@ function Player(props) {
 
    const [duration, setDuration] = useState(0);
 
-   const { playStatus, elementActive, dataItemPlaying } =
+   const { playStatus, elementActive, dataItemPlaying, idItemPlaying } =
       useSelector(playerSelector);
 
    useEffect(() => {
@@ -57,12 +57,11 @@ function Player(props) {
    useEffect(() => {
       if (playStatus === "play") {
          audioRef.current.play();
-      } 
+      }
       if (playStatus === "pause") {
          audioRef.current.pause();
       }
    }, [playStatus]);
-
 
    useEffect(() => {
       const volume = initialVolume / 100;
@@ -71,7 +70,6 @@ function Player(props) {
 
       audioRef.current.setVolumeAudio(volume);
    }, [initialVolume]);
-
 
    const handleProgressTimer = (e) => {
       //Chỉ cho phép bấm chuột trái
@@ -92,12 +90,10 @@ function Player(props) {
       }
    };
 
-
    //vô hiệu hóa khi bấm chuột phải vào timer
    const handleRightMenu = (e) => {
       e.preventDefault();
    };
-
 
    const handleProgressDrag = (e) => {
       const clientX = e.clientX; //Vị trí con trỏ chuột đang kéo so với góc bên trái của trang web
@@ -123,23 +119,19 @@ function Player(props) {
          getMins(currentTime);
    };
 
-
    const getProgressRate = (positionX) => {
       const rate = (positionX / progressRef.current.clientWidth) * 100;
       return rate;
    };
-
 
    const getVolumeRate = (positionX) => {
       const rate = (positionX / volumeRef.current.clientWidth) * 100;
       return rate;
    };
 
-
    const handleMouseDown = () => {
       isMouseDown = true;
    };
-
 
    const handleMouseUp = () => {
       if (isMouseDown) {
@@ -151,18 +143,15 @@ function Player(props) {
       }
    };
 
-
    const handleLoadAudio = () => {
       const duration = audioRef.current.getDuration();
       setDuration(duration);
    };
 
-
    const getCurrentTime = (rate) => {
       const currentTime = (rate * duration) / 100;
       return currentTime;
    };
-
 
    const handlePlay = () => {
       if (audioRef.current.getPauseStatus()) {
@@ -173,7 +162,6 @@ function Player(props) {
          dispatch(doPlay("pause"));
       }
    };
-
 
    const handleTimeUpdate = () => {
       const currentTime = audioRef.current.getCurrentTime();
@@ -187,12 +175,10 @@ function Player(props) {
       }
    };
 
-
    const handleClickPlayerArea = (e) => {
       e.stopPropagation();
       dispatch(doActiveElement("player"));
    };
-
 
    const handleProgressVolume = (e) => {
       if (e.nativeEvent.which == 1) {
@@ -205,29 +191,29 @@ function Player(props) {
       }
    };
 
-
    const handleEndAudio = () => {
       progressRef.current.previousElementSibling.children[0].innerText =
          "00:00";
       dispatch(doPlay("pause"));
       progressRef.current.children[0].style.width = "0%";
-      dispatch(doNext(true))
+      dispatch(doNext(true));
    };
-
 
    const handeNext = (e) => {
       e.preventDefault();
-      dispatch(doNext(true))
-   }
+      dispatch(doNext(true));
+   };
 
    const handePrevious = (e) => {
       e.preventDefault();
-      dispatch(doPrevious(true))
-   }
-
+      dispatch(doPrevious(true));
+   };
 
    return (
-      <div className="zing-controls" onClick={handleClickPlayerArea}>
+      <div
+         className={clsx("zing-controls", idItemPlaying === 0 ? "hide" : "")}
+         onClick={handleClickPlayerArea}
+      >
          <Audio
             onLoadedData={handleLoadAudio}
             onTimeUpdate={handleTimeUpdate}
@@ -244,7 +230,11 @@ function Player(props) {
                   <h1 className="color-title">{dataItemPlaying.name}</h1>
                   <small className="color-small">
                      {dataItemPlaying.singer?.map(({ id, name }) => {
-                        return <a href="#" key={id}>{name} </a>;
+                        return (
+                           <a href="#" key={id}>
+                              {name}{" "}
+                           </a>
+                        );
                      })}
                   </small>
                </div>
@@ -268,7 +258,10 @@ function Player(props) {
                   <div className="repeat control-icon action-hover color-title action-controls">
                      <i className="fa-solid fa-repeat" />
                   </div>
-                  <div className="icon-control-left control-icon action-hover  color-title c-0" onClick={handePrevious}>
+                  <div
+                     className="icon-control-left control-icon action-hover  color-title c-0"
+                     onClick={handePrevious}
+                  >
                      <i className="fa-solid fa-backward-step" />
                   </div>
                   <div className="play c-0">
@@ -287,7 +280,10 @@ function Player(props) {
                         </ion-icon>
                      </div>
                   </div>
-                  <div className="icon-control-right control-icon action-hover color-title " onClick={handeNext}>
+                  <div
+                     className="icon-control-right control-icon action-hover color-title "
+                     onClick={handeNext}
+                  >
                      <i className="fa-solid fa-forward-step" />
                   </div>
                   <div className="icon-shuffle control-icon action-hover color-title c-0 action-controls">

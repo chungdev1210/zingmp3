@@ -8,6 +8,7 @@ import {
    playerSelector,
 } from "../../Components/Player/playerSlice";
 import { useSelector, useDispatch } from "react-redux";
+import clsx from "clsx";
 
 function Playlist(props) {
    const client = useClient();
@@ -26,11 +27,13 @@ function Playlist(props) {
       }
    };
 
-   const handlePause = () => {
+   const handlePause = (e) => {
+      e.preventDefault();
       dispatch(doPlay("pause"));
    };
 
-   const handlePlay = () => {
+   const handlePlay = (e) => {
+      e.preventDefault();
       dispatch(doPlay("play"));
    };
 
@@ -43,14 +46,19 @@ function Playlist(props) {
          <div className="l-4 m-12 c-12">
             <div className="zing-playList-left">
                <div className="m-5 c-12">
-                  <div className="zing-playlist-img">
+                  <div
+                     className={clsx(
+                        playStatus === "play" ? "action-play-music" : "",
+                        "zing-playlist-img"
+                     )}
+                  >
                      <div className="zing-playlist-img-rotate">
                         <img src={songs.image} alt="" />
                      </div>
-                     <div className="individual-ctn2-song-item-icon zing-playlist-icon-pause">
+                     <div className="individual-ctn2-song-item-icon zing-playlist-icon-pause" onClick={handlePlay}>
                         <i className="fa-solid fa-play"></i>
                      </div>
-                     <div className="zing-playlist-icon-play">
+                     <div className="individual-ctn2-song-item-icon zing-playlist-icon-play">
                         <img
                            src="https://zmp3-static.zmdcdn.me/skins/zmp3-v6.1/images/icons/icon-playing.gif"
                            alt=""
@@ -68,18 +76,18 @@ function Playlist(props) {
                      </span>
                      <div className="btn zing-playlist-btn">
                         {playStatus === "pause" ? (
-                           <span className="zing-playlist-btn-play" onClick={(e) => {
-                              e.preventDefault();
-                              handlePlay()
-                           }}>
+                           <span
+                              className="zing-playlist-btn-play"
+                              onClick={handlePlay}
+                           >
                               <i className="fa-solid fa-play"></i>
                               TIẾP TỤC PHÁT
                            </span>
                         ) : (
-                           <span className="zing-playlist-btn-pause" onClick={(e) => {
-                              e.preventDefault();
-                              handlePause()
-                           }}>
+                           <span
+                              className="zing-playlist-btn-pause"
+                              onClick={handlePause}
+                           >
                               <i className="fa-solid fa-pause"></i>
                               TẠM DỪNG
                            </span>
