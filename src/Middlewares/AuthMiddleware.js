@@ -6,8 +6,8 @@ import { authSelector } from "../Pages/Auth/authSlice";
 export default function AuthMiddleware() {
    const auth = useSelector(authSelector)
    const { isAuth, isLoading } = auth;
-   if (!isLoading) {
-      return isAuth ? <Outlet /> : <Navigate to={"/dang-nhap"} />;
+   if (isLoading) {
+      return isAuth ? <Outlet /> : <Navigate to={"/login"} />;
    } else {
       return <p>Loading...</p>
    }

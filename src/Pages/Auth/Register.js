@@ -50,7 +50,6 @@ function Register(props) {
 
          dispatch(getUser());
          toast.success("Đăng ký thành công");
-         navigate('/')
       } else {
          toast.error('Email bị trùng. Vui lòng kiểm tra lại !!!')
       }
